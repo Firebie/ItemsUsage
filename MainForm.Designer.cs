@@ -28,12 +28,34 @@
     /// </summary>
     private void InitializeComponent()
     {
-      this.components = new System.ComponentModel.Container();
+      this._btnCars = new System.Windows.Forms.Button();
+      this.SuspendLayout();
+      // 
+      // _btnCars
+      // 
+      this._btnCars.Location = new System.Drawing.Point(12, 12);
+      this._btnCars.Name = "_btnCars";
+      this._btnCars.Size = new System.Drawing.Size(75, 23);
+      this._btnCars.TabIndex = 0;
+      this._btnCars.Text = "Cars";
+      this._btnCars.UseVisualStyleBackColor = true;
+      this._btnCars.Click += new System.EventHandler(this._btnCars_Click);
+      // 
+      // MainForm
+      // 
+      this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.Text = "Form1";
+      this.ClientSize = new System.Drawing.Size(292, 273);
+      this.Controls.Add(this._btnCars);
+      this.Name = "MainForm";
+      this.Text = "Main";
+      this.ResumeLayout(false);
+
     }
 
     #endregion
+
+    private System.Windows.Forms.Button _btnCars;
   }
 }
 

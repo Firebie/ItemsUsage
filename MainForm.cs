@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
+using ItemsUsage.Forms;
+
 namespace ItemsUsage
 {
   public partial class MainForm : Form
@@ -14,6 +16,11 @@ namespace ItemsUsage
     public MainForm()
     {
       InitializeComponent();
+    }
+
+    private void _btnCars_Click(object sender, EventArgs e)
+    {
+      new CarsForm().ShowDialog();
     }
   }
 }
