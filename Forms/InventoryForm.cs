@@ -13,11 +13,11 @@ using ItemsUsage.BusinessLogic;
 
 namespace ItemsUsage.Forms
 {
-  public partial class CarForm : Form
+  public partial class InventoryForm : Form
   {
-    Car _item;
+    Inventory _item;
     bool _newItem;
-    public CarForm(Car item, bool newItem)
+    public InventoryForm(Inventory item, bool newItem)
     {
       _item    = item;
       _newItem = newItem;
@@ -26,18 +26,29 @@ namespace ItemsUsage.Forms
       if (!_newItem)
         _id.Text = _item.Id.ToString();
 
+      _code.Text = _item.Code;
       _description.Text = _item.Description;
+      _price.Text = _item.Price.ToString();
     }
 
     private void _btnOk_Click(object sender, EventArgs e)
     {
+      _item.Code = _code.Text.Trim();
       _item.Description = _description.Text.Trim();
+      decimal price = 0;
+      if (!decimal.TryParse(_price.Text, out price) || price < 0)
+      {
+        MessageBox.Show("The price has an error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        return;
+      }
+
+      _item.Price = price;
       bool ok = false;
       using (DbManager db = new DbManager())
         if (_newItem)
-          ok = new CarAccessor().Insert(db, _item);
+          ok = new InventoryAccessor().Insert(db, _item);
         else
-          ok = new CarAccessor().Update(db, _item);
+          ok = new InventoryAccessor().Update(db, _item);
 
       if (ok)
       {

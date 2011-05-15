@@ -20,3 +20,22 @@ create table inventories
   price money, 
   constraint inventories_pk primary key(id)
 )
+
+create table orders
+(
+  id int identity,
+  car_id int, 
+  order_datetime datetime, 
+  constraint orders_pk primary key(id)
+)
+
+create table order_items
+(
+  id int identity,
+  order_id int, 
+  inventory_id int, 
+  item_quantity int, 
+  item_price money, 
+  item_datetime datetime, 
+  constraint order_items_pk primary key(id)
+)

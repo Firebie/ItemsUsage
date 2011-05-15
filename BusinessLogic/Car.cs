@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 
 using BLToolkit.Data;
+using BLToolkit.Data.DataProvider;
 using BLToolkit.DataAccess;
 using BLToolkit.EditableObjects;
 
@@ -58,8 +59,19 @@ namespace ItemsUsage.BusinessLogic
       return item.Id > 0;
     }
 
+    public bool InUse(DbManager db, Car item)
+    {
+      string sql = "select count(*) from orders where car_id = " 
+        + db.DataProvider.Convert("CarId", ConvertType.NameToQueryParameter);
+
+      return db.SetCommand(sql, db.Parameter("CarId", item.Id)).ExecuteScalar<int>() > 0;
+    }
+    
     public bool Delete(DbManager db, Car item)
     {
+      if (InUse(db, item))
+        throw new ApplicationException("This car is in use and can't be deleted.");
+
       return Query.Delete(db, item) > 0;
     }
   }

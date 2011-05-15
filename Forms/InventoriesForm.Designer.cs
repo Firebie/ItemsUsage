@@ -1,6 +1,6 @@
 ﻿namespace ItemsUsage.Forms
 {
-  partial class CarsForm
+  partial class InventoriesForm
   {
     /// <summary>
     /// Required designer variable.
@@ -30,13 +30,15 @@
     {
       this.components = new System.ComponentModel.Container();
       this._gvItems = new System.Windows.Forms.DataGridView();
-      this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.objectBinder = new BLToolkit.ComponentModel.ObjectBinder(this.components);
       this._btnCancel = new System.Windows.Forms.Button();
       this._btnAdd = new System.Windows.Forms.Button();
       this._btnEdit = new System.Windows.Forms.Button();
       this._btnDelete = new System.Windows.Forms.Button();
+      this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.codeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.objectBinder = new BLToolkit.ComponentModel.ObjectBinder(this.components);
       ((System.ComponentModel.ISupportInitialize)(this._gvItems)).BeginInit();
       this.SuspendLayout();
       // 
@@ -51,7 +53,9 @@
       this._gvItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
       this._gvItems.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
-            this.descriptionDataGridViewTextBoxColumn});
+            this.codeDataGridViewTextBoxColumn,
+            this.descriptionDataGridViewTextBoxColumn,
+            this.priceDataGridViewTextBoxColumn});
       this._gvItems.DataSource = this.objectBinder;
       this._gvItems.Location = new System.Drawing.Point(12, 2);
       this._gvItems.Name = "_gvItems";
@@ -59,28 +63,6 @@
       this._gvItems.Size = new System.Drawing.Size(554, 284);
       this._gvItems.TabIndex = 0;
       this._gvItems.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this._gvItems_CellDoubleClick);
-      // 
-      // idDataGridViewTextBoxColumn
-      // 
-      this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-      this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-      this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-      this.idDataGridViewTextBoxColumn.ReadOnly = true;
-      // 
-      // descriptionDataGridViewTextBoxColumn
-      // 
-      this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
-      this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
-      this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
-      this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
-      this.descriptionDataGridViewTextBoxColumn.Width = 300;
-      // 
-      // objectBinder
-      // 
-      this.objectBinder.AllowEdit = false;
-      this.objectBinder.AllowNew = false;
-      this.objectBinder.AllowRemove = false;
-      this.objectBinder.ItemType = typeof(ItemsUsage.BusinessLogic.Car);
       // 
       // _btnCancel
       // 
@@ -126,7 +108,43 @@
       this._btnDelete.UseVisualStyleBackColor = true;
       this._btnDelete.Click += new System.EventHandler(this._btnDelete_Click);
       // 
-      // CarsForm
+      // idDataGridViewTextBoxColumn
+      // 
+      this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+      this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+      this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+      this.idDataGridViewTextBoxColumn.ReadOnly = true;
+      // 
+      // codeDataGridViewTextBoxColumn
+      // 
+      this.codeDataGridViewTextBoxColumn.DataPropertyName = "Code";
+      this.codeDataGridViewTextBoxColumn.HeaderText = "Code";
+      this.codeDataGridViewTextBoxColumn.Name = "codeDataGridViewTextBoxColumn";
+      this.codeDataGridViewTextBoxColumn.ReadOnly = true;
+      // 
+      // descriptionDataGridViewTextBoxColumn
+      // 
+      this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
+      this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
+      this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+      this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
+      this.descriptionDataGridViewTextBoxColumn.Width = 200;
+      // 
+      // priceDataGridViewTextBoxColumn
+      // 
+      this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
+      this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
+      this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+      this.priceDataGridViewTextBoxColumn.ReadOnly = true;
+      // 
+      // objectBinder
+      // 
+      this.objectBinder.AllowEdit = false;
+      this.objectBinder.AllowNew = false;
+      this.objectBinder.AllowRemove = false;
+      this.objectBinder.ItemType = typeof(ItemsUsage.BusinessLogic.Inventory);
+      // 
+      // InventoriesForm
       // 
       this.AcceptButton = this._btnCancel;
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -138,8 +156,8 @@
       this.Controls.Add(this._btnAdd);
       this.Controls.Add(this._btnCancel);
       this.Controls.Add(this._gvItems);
-      this.Name = "CarsForm";
-      this.Text = "Cars";
+      this.Name = "InventoriesForm";
+      this.Text = "Inventories";
       ((System.ComponentModel.ISupportInitialize)(this._gvItems)).EndInit();
       this.ResumeLayout(false);
 
@@ -152,8 +170,10 @@
     private BLToolkit.ComponentModel.ObjectBinder objectBinder;
     private System.Windows.Forms.Button _btnAdd;
     private System.Windows.Forms.Button _btnEdit;
-    private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-    private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
     private System.Windows.Forms.Button _btnDelete;
+    private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+    private System.Windows.Forms.DataGridViewTextBoxColumn codeDataGridViewTextBoxColumn;
+    private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
+    private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
   }
 }

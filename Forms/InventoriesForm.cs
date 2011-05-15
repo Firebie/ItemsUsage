@@ -14,20 +14,20 @@ using ItemsUsage.BusinessLogic;
 
 namespace ItemsUsage.Forms
 {
-  public partial class CarsForm : Form
+  public partial class InventoriesForm : Form
   {
-    public CarsForm()
+    public InventoriesForm()
     {
       InitializeComponent();
       using (DbManager db = new DbManager())
-        objectBinder.List = new CarAccessor().GetAll(db);
+        objectBinder.List = new InventoryAccessor().GetAll(db);
     }
 
     private void _btnAdd_Click(object sender, EventArgs e)
     {
-      Car item = TypeAccessor<Car>.CreateInstanceEx();
+      Inventory item = TypeAccessor<Inventory>.CreateInstanceEx();
 
-      using (CarForm form = new CarForm(item, true))
+      using (InventoryForm form = new InventoryForm(item, true))
       {
         if (form.ShowDialog() == DialogResult.OK)
         {
@@ -37,9 +37,9 @@ namespace ItemsUsage.Forms
       }
     }
 
-    private void Edit(Car item)
+    private void Edit(Inventory item)
     {
-      using (CarForm form = new CarForm(item, false))
+      using (InventoryForm form = new InventoryForm(item, false))
       {
         if (form.ShowDialog() != DialogResult.OK)
           item.RejectChanges();
@@ -49,37 +49,37 @@ namespace ItemsUsage.Forms
     private void _btnEdit_Click(object sender, EventArgs e)
     {
       if (_gvItems.CurrentRow != null)
-        Edit((Car)_gvItems.CurrentRow.DataBoundItem);
+        Edit((Inventory)_gvItems.CurrentRow.DataBoundItem);
     }
 
     private void _gvItems_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
     {
       DataGridViewRow row = _gvItems.Rows[e.RowIndex];
 
-      Edit((Car)row.DataBoundItem);
+      Edit((Inventory)row.DataBoundItem);
     }
 
     private void _btnDelete_Click(object sender, EventArgs e)
     {
       if (_gvItems.CurrentRow != null)
       {
-        DialogResult dr = 
+        DialogResult dr =
           MessageBox.Show(
-            "Are you sure to delete the item?", 
-            "Warning", 
-            MessageBoxButtons.OKCancel, 
+            "Are you sure to delete the item?",
+            "Warning",
+            MessageBoxButtons.OKCancel,
             MessageBoxIcon.Question);
 
         if (dr == DialogResult.Cancel)
           return;
 
-        Car item = (Car)_gvItems.CurrentRow.DataBoundItem;
+        Inventory item = (Inventory)_gvItems.CurrentRow.DataBoundItem;
 
         try
         {
           UseWaitCursor = true;
           using (DbManager db = new DbManager())
-            new CarAccessor().Delete(db, item);
+            new InventoryAccessor().Delete(db, item);
           UseWaitCursor = false;
 
           objectBinder.List.Remove(item);

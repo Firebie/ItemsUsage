@@ -22,5 +22,10 @@ namespace ItemsUsage
     {
       new CarsForm().ShowDialog();
     }
+
+    private void _btnInventories_Click(object sender, EventArgs e)
+    {
+      new InventoriesForm().ShowDialog();
+    }
   }
 }
