@@ -145,6 +145,7 @@
       this._selectInventory.TabIndex = 0;
       this._selectInventory.Text = "...";
       this._selectInventory.UseVisualStyleBackColor = true;
+      this._selectInventory.Click += new System.EventHandler(this._selectInventory_Click);
       // 
       // _quantity
       // 

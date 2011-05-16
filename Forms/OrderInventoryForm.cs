@@ -74,5 +74,19 @@ namespace ItemsUsage.Forms
       }
     }
 
+    private void _selectInventory_Click(object sender, EventArgs e)
+    {
+      using (SelectInventoryForm form = new SelectInventoryForm(_model))
+      {
+        if (form.ShowDialog() == DialogResult.OK)
+        {
+          _item.InventoryId    = form.SelectedItem.Id;
+          _item.InventoryPrice = form.SelectedItem.Price;
+
+          _inventory.Text = form.SelectedItem.DisplayString;
+          _price.Text = _item.InventoryPrice.ToString();
+        }
+      }
+    }
   }
 }

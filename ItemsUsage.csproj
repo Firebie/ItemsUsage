@@ -93,6 +93,12 @@
     <Compile Include="Forms\OrderInventoryForm.designer.cs">
       <DependentUpon>OrderInventoryForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\SelectInventoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SelectInventoryForm.designer.cs">
+      <DependentUpon>SelectInventoryForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +124,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\OrderInventoryForm.resx">
       <DependentUpon>OrderInventoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SelectInventoryForm.resx">
+      <DependentUpon>SelectInventoryForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
