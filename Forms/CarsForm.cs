@@ -16,18 +16,19 @@ namespace ItemsUsage.Forms
 {
   public partial class CarsForm : Form
   {
-    public CarsForm()
+    Model _model;
+    public CarsForm(Model model)
     {
+      _model = model;
       InitializeComponent();
-      using (DbManager db = new DbManager())
-        objectBinder.List = new CarAccessor().GetAll(db);
+      objectBinder.List = _model.CarGetAll();
     }
 
     private void _btnAdd_Click(object sender, EventArgs e)
     {
-      Car item = TypeAccessor<Car>.CreateInstanceEx();
+      Car item = _model.CarCreateInstance();
 
-      using (CarForm form = new CarForm(item, true))
+      using (CarForm form = new CarForm(_model, item, true))
       {
         if (form.ShowDialog() == DialogResult.OK)
         {
@@ -39,7 +40,7 @@ namespace ItemsUsage.Forms
 
     private void Edit(Car item)
     {
-      using (CarForm form = new CarForm(item, false))
+      using (CarForm form = new CarForm(_model, item, false))
       {
         if (form.ShowDialog() != DialogResult.OK)
           item.RejectChanges();
@@ -78,8 +79,7 @@ namespace ItemsUsage.Forms
         try
         {
           UseWaitCursor = true;
-          using (DbManager db = new DbManager())
-            new CarAccessor().Delete(db, item);
+          _model.CarDelete(item);
           UseWaitCursor = false;
 
           objectBinder.List.Remove(item);

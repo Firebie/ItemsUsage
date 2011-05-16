@@ -132,7 +132,7 @@
       this._price.Size = new System.Drawing.Size(100, 20);
       this._price.TabIndex = 2;
       // 
-      // Inventory
+      // InventoryForm
       // 
       this.AcceptButton = this._btnOk;
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -150,6 +150,7 @@
       this.Controls.Add(this._id);
       this.Controls.Add(this.label1);
       this.Name = "InventoryForm";
+      this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
       this.Text = "Inventory";
       this.ResumeLayout(false);
       this.PerformLayout();

@@ -107,6 +107,7 @@
       this.Controls.Add(this._id);
       this.Controls.Add(this.label1);
       this.Name = "CarForm";
+      this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
       this.Text = "Car";
       this.ResumeLayout(false);
       this.PerformLayout();

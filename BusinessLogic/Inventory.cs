@@ -20,6 +20,14 @@ namespace ItemsUsage.BusinessLogic
     public abstract string  Code        { get; set; }
     public abstract string  Description { get; set; }
     public abstract decimal Price       { get; set; }
+
+    public string DisplayString
+    {
+      get
+      {
+        return "[" + Code + "] " + Description;
+      }
+    }
   }
 
   public class InventoryAccessor

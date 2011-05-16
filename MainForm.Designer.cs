@@ -60,6 +60,7 @@
       this.Controls.Add(this._btnInventories);
       this.Controls.Add(this._btnCars);
       this.Name = "MainForm";
+      this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
       this.Text = "Main";
       this.ResumeLayout(false);
 

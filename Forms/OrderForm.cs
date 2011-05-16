@@ -7,23 +7,26 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
+using BLToolkit.Data;
+using BLToolkit.Reflection;
+
 using ItemsUsage.BusinessLogic;
 
 namespace ItemsUsage.Forms
 {
-  public partial class InventoriesForm : Form
+  public partial class OrderForm : Form
   {
     Model _model;
-    public InventoriesForm(Model model)
+    public OrderForm(Model model)
     {
       _model = model;
       InitializeComponent();
-      objectBinder.List = _model.InventoryGetAll();
+      objectBinder.List = _model.OrderInventoryGetAll();
     }
 
     private void _btnAdd_Click(object sender, EventArgs e)
     {
-      Inventory item = _model.InventoryCreateInstance();
+      Inventory item = TypeAccessor<Inventory>.CreateInstanceEx();
 
       using (InventoryForm form = new InventoryForm(item, true))
       {
@@ -76,7 +79,8 @@ namespace ItemsUsage.Forms
         try
         {
           UseWaitCursor = true;
-          _model.InventoryDelete(item);
+          using (DbManager db = new DbManager())
+            new InventoryAccessor().Delete(db, item);
           UseWaitCursor = false;
 
           objectBinder.List.Remove(item);

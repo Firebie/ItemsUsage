@@ -7,23 +7,25 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-using BLToolkit.Data;
-
 using ItemsUsage.BusinessLogic;
 
 namespace ItemsUsage.Forms
 {
   public partial class CarForm : Form
   {
-    Car _item;
-    bool _newItem;
-    public CarForm(Car item, bool newItem)
+    Model _model;
+    Car   _item;
+    bool  _newItem;
+    public CarForm(Model model, Car item, bool newItem)
     {
+      _model   = model;
       _item    = item;
       _newItem = newItem;
       InitializeComponent();
 
-      if (!_newItem)
+      if (_newItem)
+        _id.Text = "(new item)";
+      else
         _id.Text = _item.Id.ToString();
 
       _description.Text = _item.Description;
@@ -33,11 +35,10 @@ namespace ItemsUsage.Forms
     {
       _item.Description = _description.Text.Trim();
       bool ok = false;
-      using (DbManager db = new DbManager())
-        if (_newItem)
-          ok = new CarAccessor().Insert(db, _item);
-        else
-          ok = new CarAccessor().Update(db, _item);
+      if (_newItem)
+        ok = _model.CarInsert(_item);
+      else
+        ok = _model.CarUpdate(_item);
 
       if (ok)
       {

@@ -25,17 +25,18 @@ create table orders
 (
   id int identity,
   car_id int, 
-  order_datetime datetime, 
+  order_date datetime, 
   constraint orders_pk primary key(id)
 )
 
-create table order_items
+create table order_inventories
 (
   id int identity,
   order_id int, 
+  sequence_id int, 
   inventory_id int, 
-  item_quantity int, 
-  item_price money, 
-  item_datetime datetime, 
+  inventory_quantity int, 
+  inventory_price money, 
+  inventory_date datetime, 
   constraint order_items_pk primary key(id)
 )

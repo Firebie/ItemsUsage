@@ -157,6 +157,7 @@
       this.Controls.Add(this._btnCancel);
       this.Controls.Add(this._gvItems);
       this.Name = "InventoriesForm";
+      this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
       this.Text = "Inventories";
       ((System.ComponentModel.ISupportInitialize)(this._gvItems)).EndInit();
       this.ResumeLayout(false);
