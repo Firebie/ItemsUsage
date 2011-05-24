@@ -7,6 +7,7 @@ using BLToolkit.Data;
 using BLToolkit.Data.DataProvider;
 using BLToolkit.DataAccess;
 using BLToolkit.EditableObjects;
+using BLToolkit.Mapping;
 
 using ItemsUsage.BusinessLogic.DataAccess;
 
@@ -18,6 +19,15 @@ namespace ItemsUsage.BusinessLogic
     [PrimaryKey, NonUpdatable]
     public abstract int Id { get; set; }
     public abstract string Description { get; set; }
+
+    [MapIgnore]
+    public string DisplayString
+    {
+      get
+      {
+        return Description;
+      }
+    }
   }
 
   public class CarAccessor

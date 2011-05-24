@@ -16,6 +16,12 @@ namespace ItemsUsage.BusinessLogic
       return TypeAccessor<Car>.CreateInstanceEx();
     }
 
+    public Car GetCar(int id)
+    {
+      using (DbManager db = new DbManager())
+        return new CarAccessor().Get(db, id);
+    }
+
     public EditableList<Car> CarGetAll()
     {
       using (DbManager db = new DbManager())

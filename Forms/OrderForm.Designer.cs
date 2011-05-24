@@ -42,6 +42,11 @@
       this.itemInventoryPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.itemInventoryQuantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.TotalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.label1 = new System.Windows.Forms.Label();
+      this._selectCar = new System.Windows.Forms.Button();
+      this._car = new System.Windows.Forms.TextBox();
+      this._allTotal = new System.Windows.Forms.TextBox();
+      this.label2 = new System.Windows.Forms.Label();
       ((System.ComponentModel.ISupportInitialize)(this._gvItems)).BeginInit();
       this.SuspendLayout();
       // 
@@ -66,7 +71,7 @@
       this._gvItems.MultiSelect = false;
       this._gvItems.Name = "_gvItems";
       this._gvItems.ReadOnly = true;
-      this._gvItems.Size = new System.Drawing.Size(643, 244);
+      this._gvItems.Size = new System.Drawing.Size(643, 214);
       this._gvItems.TabIndex = 0;
       this._gvItems.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this._gvItems_CellDoubleClick);
       // 
@@ -174,6 +179,55 @@
       this.TotalPrice.Name = "TotalPrice";
       this.TotalPrice.ReadOnly = true;
       // 
+      // label1
+      // 
+      this.label1.AutoSize = true;
+      this.label1.Location = new System.Drawing.Point(13, 13);
+      this.label1.Name = "label1";
+      this.label1.Size = new System.Drawing.Size(26, 13);
+      this.label1.TabIndex = 7;
+      this.label1.Text = "Car:";
+      // 
+      // _selectCar
+      // 
+      this._selectCar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+      this._selectCar.Location = new System.Drawing.Point(332, 8);
+      this._selectCar.Name = "_selectCar";
+      this._selectCar.Size = new System.Drawing.Size(23, 23);
+      this._selectCar.TabIndex = 8;
+      this._selectCar.Text = "...";
+      this._selectCar.UseVisualStyleBackColor = true;
+      this._selectCar.Click += new System.EventHandler(this._selectCar_Click);
+      // 
+      // _car
+      // 
+      this._car.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+      this._car.Location = new System.Drawing.Point(45, 10);
+      this._car.Name = "_car";
+      this._car.ReadOnly = true;
+      this._car.Size = new System.Drawing.Size(281, 20);
+      this._car.TabIndex = 9;
+      // 
+      // _allTotal
+      // 
+      this._allTotal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+      this._allTotal.Location = new System.Drawing.Point(550, 262);
+      this._allTotal.Name = "_allTotal";
+      this._allTotal.ReadOnly = true;
+      this._allTotal.Size = new System.Drawing.Size(105, 20);
+      this._allTotal.TabIndex = 11;
+      // 
+      // label2
+      // 
+      this.label2.AutoSize = true;
+      this.label2.Location = new System.Drawing.Point(496, 265);
+      this.label2.Name = "label2";
+      this.label2.Size = new System.Drawing.Size(44, 13);
+      this.label2.TabIndex = 10;
+      this.label2.Text = "All total:";
+      // 
       // OrderForm
       // 
       this.AcceptButton = this._btnOk;
@@ -181,6 +235,11 @@
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this._btnCancel;
       this.ClientSize = new System.Drawing.Size(667, 318);
+      this.Controls.Add(this._allTotal);
+      this.Controls.Add(this.label2);
+      this.Controls.Add(this._selectCar);
+      this.Controls.Add(this._car);
+      this.Controls.Add(this.label1);
       this.Controls.Add(this._btnOk);
       this.Controls.Add(this._btnDelete);
       this.Controls.Add(this._btnEdit);
@@ -192,6 +251,7 @@
       this.Text = "Order inventories";
       ((System.ComponentModel.ISupportInitialize)(this._gvItems)).EndInit();
       this.ResumeLayout(false);
+      this.PerformLayout();
 
     }
 
@@ -210,5 +270,10 @@
     private System.Windows.Forms.DataGridViewTextBoxColumn itemInventoryPriceDataGridViewTextBoxColumn;
     private System.Windows.Forms.DataGridViewTextBoxColumn itemInventoryQuantityDataGridViewTextBoxColumn;
     private System.Windows.Forms.DataGridViewTextBoxColumn TotalPrice;
+    private System.Windows.Forms.Label label1;
+    private System.Windows.Forms.Button _selectCar;
+    private System.Windows.Forms.TextBox _car;
+    private System.Windows.Forms.TextBox _allTotal;
+    private System.Windows.Forms.Label label2;
   }
 }

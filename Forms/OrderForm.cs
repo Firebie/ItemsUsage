@@ -104,7 +104,10 @@ namespace ItemsUsage.Forms
       _gridItems.AcceptChanges();
 
       InitializeComponent();
+
       objectBinder.List = _gridItems;
+      SetCar();
+      SetAllTotal();
     }
 
     string GetInventoryName(int id)
@@ -132,6 +135,7 @@ namespace ItemsUsage.Forms
         {
           item.AcceptChanges();
           objectBinder.List.Add(new GridItem(item, GetInventoryName(item.InventoryId)));
+          SetAllTotal();
         }
       }
     }
@@ -142,6 +146,8 @@ namespace ItemsUsage.Forms
       {
         if (form.ShowDialog() != DialogResult.OK)
           item.RejectChanges();
+        else
+          SetAllTotal();
       }
     }
 
@@ -179,6 +185,7 @@ namespace ItemsUsage.Forms
           seq += 1;
           item.Item.SequenceId = seq;
         }
+        SetAllTotal();
       }
     }
 
@@ -224,6 +231,33 @@ namespace ItemsUsage.Forms
       
       DialogResult = DialogResult.OK;
       Close();
+    }
+
+    void SetCar()
+    {
+      Car car = _model.GetCar(_order.CarId);
+      _car.Text = car != null ? car.DisplayString : "(no car selected)";
+    }
+
+    private void _selectCar_Click(object sender, EventArgs e)
+    {
+      using (SelectCarForm form = new SelectCarForm(_model))
+      {
+        if (form.ShowDialog() == DialogResult.OK)
+        {
+          _order.CarId = form.SelectedItem.Id;
+          SetCar();
+        }
+      }
+    }
+
+    void SetAllTotal()
+    {
+      decimal total = 0;
+      foreach (GridItem item in objectBinder.List)
+        total += item.TotalPrice;
+
+      _allTotal.Text = total.ToString();
     }
   }
 }
