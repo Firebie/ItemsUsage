@@ -28,6 +28,7 @@
     /// </summary>
     private void InitializeComponent()
     {
+      this.components = new System.ComponentModel.Container();
       this._btnDelete = new System.Windows.Forms.Button();
       this._btnEdit = new System.Windows.Forms.Button();
       this._btnAdd = new System.Windows.Forms.Button();
@@ -40,6 +41,10 @@
       this.carsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.inventoriesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this._btnExit = new System.Windows.Forms.Button();
+      this.objectBinder = new BLToolkit.ComponentModel.ObjectBinder(this.components);
+      this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.carNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       ((System.ComponentModel.ISupportInitialize)(this._gvItems)).BeginInit();
       this._mainMenu.SuspendLayout();
       this.SuspendLayout();
@@ -53,6 +58,7 @@
       this._btnDelete.TabIndex = 9;
       this._btnDelete.Text = "Delete";
       this._btnDelete.UseVisualStyleBackColor = true;
+      this._btnDelete.Click += new System.EventHandler(this._btnDelete_Click);
       // 
       // _btnEdit
       // 
@@ -63,6 +69,7 @@
       this._btnEdit.TabIndex = 8;
       this._btnEdit.Text = "Edit";
       this._btnEdit.UseVisualStyleBackColor = true;
+      this._btnEdit.Click += new System.EventHandler(this._btnEdit_Click);
       // 
       // _btnAdd
       // 
@@ -82,12 +89,19 @@
       this._gvItems.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+      this._gvItems.AutoGenerateColumns = false;
       this._gvItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+      this._gvItems.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.dateDataGridViewTextBoxColumn,
+            this.carNameDataGridViewTextBoxColumn});
+      this._gvItems.DataSource = this.objectBinder;
       this._gvItems.Location = new System.Drawing.Point(12, 27);
       this._gvItems.Name = "_gvItems";
       this._gvItems.ReadOnly = true;
       this._gvItems.Size = new System.Drawing.Size(609, 311);
       this._gvItems.TabIndex = 6;
+      this._gvItems.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this._gvItems_CellDoubleClick);
       // 
       // _mainMenu
       // 
@@ -133,14 +147,14 @@
       // carsToolStripMenuItem
       // 
       this.carsToolStripMenuItem.Name = "carsToolStripMenuItem";
-      this.carsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+      this.carsToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
       this.carsToolStripMenuItem.Text = "&Cars";
       this.carsToolStripMenuItem.Click += new System.EventHandler(this.carsToolStripMenuItem_Click);
       // 
       // inventoriesToolStripMenuItem
       // 
       this.inventoriesToolStripMenuItem.Name = "inventoriesToolStripMenuItem";
-      this.inventoriesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+      this.inventoriesToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
       this.inventoriesToolStripMenuItem.Text = "&Inventories";
       this.inventoriesToolStripMenuItem.Click += new System.EventHandler(this.inventoriesToolStripMenuItem_Click);
       // 
@@ -155,6 +169,34 @@
       this._btnExit.Text = "&Exit";
       this._btnExit.UseVisualStyleBackColor = true;
       this._btnExit.Click += new System.EventHandler(this._btnExit_Click);
+      // 
+      // objectBinder
+      // 
+      this.objectBinder.AllowEdit = false;
+      this.objectBinder.AllowNew = false;
+      this.objectBinder.AllowRemove = false;
+      this.objectBinder.ItemType = typeof(ItemsUsage.MainForm.GridItem);
+      // 
+      // idDataGridViewTextBoxColumn
+      // 
+      this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+      this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+      this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+      this.idDataGridViewTextBoxColumn.ReadOnly = true;
+      // 
+      // dateDataGridViewTextBoxColumn
+      // 
+      this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
+      this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
+      this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+      this.dateDataGridViewTextBoxColumn.ReadOnly = true;
+      // 
+      // carNameDataGridViewTextBoxColumn
+      // 
+      this.carNameDataGridViewTextBoxColumn.DataPropertyName = "CarName";
+      this.carNameDataGridViewTextBoxColumn.HeaderText = "Car";
+      this.carNameDataGridViewTextBoxColumn.Name = "carNameDataGridViewTextBoxColumn";
+      this.carNameDataGridViewTextBoxColumn.ReadOnly = true;
       // 
       // MainForm
       // 
@@ -194,6 +236,10 @@
     private System.Windows.Forms.ToolStripMenuItem carsToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem inventoriesToolStripMenuItem;
     private System.Windows.Forms.Button _btnExit;
+    private BLToolkit.ComponentModel.ObjectBinder objectBinder;
+    private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+    private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
+    private System.Windows.Forms.DataGridViewTextBoxColumn carNameDataGridViewTextBoxColumn;
   }
 }
 

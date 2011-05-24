@@ -55,9 +55,12 @@ namespace ItemsUsage.Forms
 
     private void _gvItems_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
     {
-      DataGridViewRow row = _gvItems.Rows[e.RowIndex];
+      if (e.RowIndex >= 0)
+      {
+        DataGridViewRow row = _gvItems.Rows[e.RowIndex];
 
-      Edit((Car)row.DataBoundItem);
+        Edit((Car)row.DataBoundItem);
+      }
     }
 
     private void _btnDelete_Click(object sender, EventArgs e)

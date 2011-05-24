@@ -105,6 +105,7 @@ namespace ItemsUsage.Forms
 
       InitializeComponent();
 
+      _date.Value = _order.OrderDateTime;
       objectBinder.List = _gridItems;
       SetCar();
       SetAllTotal();
@@ -125,7 +126,7 @@ namespace ItemsUsage.Forms
       OrderInventory item = TypeAccessor<OrderInventory>.CreateInstanceEx();
       item.SequenceId = objectBinder.List.Count + 1;
       item.InventoryQuantity = 1;
-      item.InventoryDate = DateTime.Today;
+      item.InventoryDate = _date.Value.Date;
       if (objectBinder.List.Count > 0)
         item.InventoryDate = ((GridItem)objectBinder.List[objectBinder.List.Count - 1]).Item.InventoryDate;
 
@@ -159,9 +160,12 @@ namespace ItemsUsage.Forms
 
     private void _gvItems_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
     {
-      DataGridViewRow row = _gvItems.Rows[e.RowIndex];
+      if (e.RowIndex >= 0)
+      {
+        DataGridViewRow row = _gvItems.Rows[e.RowIndex];
 
-      Edit(((GridItem)row.DataBoundItem).Item);
+        Edit(((GridItem)row.DataBoundItem).Item);
+      }
     }
 
     private void _btnDelete_Click(object sender, EventArgs e)
@@ -191,6 +195,7 @@ namespace ItemsUsage.Forms
 
     private void _btnOk_Click(object sender, EventArgs e)
     {
+      _order.OrderDateTime = _date.Value.Date;
       try
       {
         UseWaitCursor = true;

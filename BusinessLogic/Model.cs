@@ -75,6 +75,12 @@ namespace ItemsUsage.BusinessLogic
         return new OrderInventoryAccessor().GetAll(db);
     }
 
+    public EditableList<OrderInventory> OrderInventoryGetByOrder(int orderId)
+    {
+      using (DbManager db = new DbManager())
+        return new OrderInventoryAccessor().GetByOrderId(db, orderId);
+    }
+
     public bool OrderInventoryInsert(OrderInventory item)
     {
       using (DbManager db = new DbManager())

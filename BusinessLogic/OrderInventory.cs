@@ -47,6 +47,18 @@ namespace ItemsUsage.BusinessLogic
       return Query.SelectAll(db, list);
     }
 
+    public EditableList<OrderInventory> GetByOrderId(DbManager db, int orderId)
+    {
+      string sql = 
+        "select * from order_inventories where order_id = " 
+          + db.DataProvider.Convert("OrderId", ConvertType.NameToQueryParameter)
+        + " order by sequence_id";
+
+      EditableList<OrderInventory> list = new EditableList<OrderInventory>();
+      db.SetCommand(sql, db.Parameter("OrderId", orderId)).ExecuteList<OrderInventory>(list);
+      return list;
+    }
+
     public OrderInventory Get(DbManager db, int id)
     {
       return Query.SelectByKey(db, id);

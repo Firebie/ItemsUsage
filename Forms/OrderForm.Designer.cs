@@ -47,6 +47,8 @@
       this._car = new System.Windows.Forms.TextBox();
       this._allTotal = new System.Windows.Forms.TextBox();
       this.label2 = new System.Windows.Forms.Label();
+      this.label3 = new System.Windows.Forms.Label();
+      this._date = new System.Windows.Forms.DateTimePicker();
       ((System.ComponentModel.ISupportInitialize)(this._gvItems)).BeginInit();
       this.SuspendLayout();
       // 
@@ -71,7 +73,7 @@
       this._gvItems.MultiSelect = false;
       this._gvItems.Name = "_gvItems";
       this._gvItems.ReadOnly = true;
-      this._gvItems.Size = new System.Drawing.Size(643, 214);
+      this._gvItems.Size = new System.Drawing.Size(643, 243);
       this._gvItems.TabIndex = 0;
       this._gvItems.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this._gvItems_CellDoubleClick);
       // 
@@ -191,7 +193,7 @@
       // _selectCar
       // 
       this._selectCar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-      this._selectCar.Location = new System.Drawing.Point(332, 8);
+      this._selectCar.Location = new System.Drawing.Point(305, 8);
       this._selectCar.Name = "_selectCar";
       this._selectCar.Size = new System.Drawing.Size(23, 23);
       this._selectCar.TabIndex = 8;
@@ -206,14 +208,14 @@
       this._car.Location = new System.Drawing.Point(45, 10);
       this._car.Name = "_car";
       this._car.ReadOnly = true;
-      this._car.Size = new System.Drawing.Size(281, 20);
+      this._car.Size = new System.Drawing.Size(254, 20);
       this._car.TabIndex = 9;
       // 
       // _allTotal
       // 
       this._allTotal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-      this._allTotal.Location = new System.Drawing.Point(550, 262);
+      this._allTotal.Location = new System.Drawing.Point(550, 10);
       this._allTotal.Name = "_allTotal";
       this._allTotal.ReadOnly = true;
       this._allTotal.Size = new System.Drawing.Size(105, 20);
@@ -222,11 +224,28 @@
       // label2
       // 
       this.label2.AutoSize = true;
-      this.label2.Location = new System.Drawing.Point(496, 265);
+      this.label2.Location = new System.Drawing.Point(496, 13);
       this.label2.Name = "label2";
       this.label2.Size = new System.Drawing.Size(44, 13);
       this.label2.TabIndex = 10;
       this.label2.Text = "All total:";
+      // 
+      // label3
+      // 
+      this.label3.AutoSize = true;
+      this.label3.Location = new System.Drawing.Point(334, 13);
+      this.label3.Name = "label3";
+      this.label3.Size = new System.Drawing.Size(33, 13);
+      this.label3.TabIndex = 12;
+      this.label3.Text = "Date:";
+      // 
+      // _date
+      // 
+      this._date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+      this._date.Location = new System.Drawing.Point(382, 10);
+      this._date.Name = "_date";
+      this._date.Size = new System.Drawing.Size(100, 20);
+      this._date.TabIndex = 13;
       // 
       // OrderForm
       // 
@@ -235,6 +254,8 @@
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this._btnCancel;
       this.ClientSize = new System.Drawing.Size(667, 318);
+      this.Controls.Add(this._date);
+      this.Controls.Add(this.label3);
       this.Controls.Add(this._allTotal);
       this.Controls.Add(this.label2);
       this.Controls.Add(this._selectCar);
@@ -275,5 +296,7 @@
     private System.Windows.Forms.TextBox _car;
     private System.Windows.Forms.TextBox _allTotal;
     private System.Windows.Forms.Label label2;
+    private System.Windows.Forms.Label label3;
+    private System.Windows.Forms.DateTimePicker _date;
   }
 }
