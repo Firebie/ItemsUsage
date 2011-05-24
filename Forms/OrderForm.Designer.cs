@@ -30,15 +30,18 @@
     {
       this.components = new System.ComponentModel.Container();
       this._gvItems = new System.Windows.Forms.DataGridView();
-      this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.codeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.objectBinder = new BLToolkit.ComponentModel.ObjectBinder(this.components);
       this._btnCancel = new System.Windows.Forms.Button();
       this._btnAdd = new System.Windows.Forms.Button();
       this._btnEdit = new System.Windows.Forms.Button();
       this._btnDelete = new System.Windows.Forms.Button();
+      this._btnOk = new System.Windows.Forms.Button();
+      this.sequenceIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.itemInventoryDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.itemInventoryPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.itemInventoryQuantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.TotalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
       ((System.ComponentModel.ISupportInitialize)(this._gvItems)).BeginInit();
       this.SuspendLayout();
       // 
@@ -52,63 +55,37 @@
       this._gvItems.AutoGenerateColumns = false;
       this._gvItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
       this._gvItems.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.codeDataGridViewTextBoxColumn,
-            this.descriptionDataGridViewTextBoxColumn,
-            this.priceDataGridViewTextBoxColumn});
+            this.sequenceIdDataGridViewTextBoxColumn,
+            this.nameDataGridViewTextBoxColumn,
+            this.itemInventoryDateDataGridViewTextBoxColumn,
+            this.itemInventoryPriceDataGridViewTextBoxColumn,
+            this.itemInventoryQuantityDataGridViewTextBoxColumn,
+            this.TotalPrice});
       this._gvItems.DataSource = this.objectBinder;
       this._gvItems.Location = new System.Drawing.Point(12, 42);
+      this._gvItems.MultiSelect = false;
       this._gvItems.Name = "_gvItems";
       this._gvItems.ReadOnly = true;
-      this._gvItems.Size = new System.Drawing.Size(554, 244);
+      this._gvItems.Size = new System.Drawing.Size(643, 244);
       this._gvItems.TabIndex = 0;
       this._gvItems.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this._gvItems_CellDoubleClick);
-      // 
-      // idDataGridViewTextBoxColumn
-      // 
-      this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-      this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-      this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-      this.idDataGridViewTextBoxColumn.ReadOnly = true;
-      // 
-      // codeDataGridViewTextBoxColumn
-      // 
-      this.codeDataGridViewTextBoxColumn.DataPropertyName = "Code";
-      this.codeDataGridViewTextBoxColumn.HeaderText = "Code";
-      this.codeDataGridViewTextBoxColumn.Name = "codeDataGridViewTextBoxColumn";
-      this.codeDataGridViewTextBoxColumn.ReadOnly = true;
-      // 
-      // descriptionDataGridViewTextBoxColumn
-      // 
-      this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
-      this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
-      this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
-      this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
-      this.descriptionDataGridViewTextBoxColumn.Width = 200;
-      // 
-      // priceDataGridViewTextBoxColumn
-      // 
-      this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
-      this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
-      this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
-      this.priceDataGridViewTextBoxColumn.ReadOnly = true;
       // 
       // objectBinder
       // 
       this.objectBinder.AllowEdit = false;
       this.objectBinder.AllowNew = false;
       this.objectBinder.AllowRemove = false;
-      this.objectBinder.ItemType = typeof(ItemsUsage.BusinessLogic.Inventory);
+      this.objectBinder.ItemType = typeof(ItemsUsage.Forms.OrderForm.GridItem);
       // 
       // _btnCancel
       // 
       this._btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
       this._btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-      this._btnCancel.Location = new System.Drawing.Point(491, 291);
+      this._btnCancel.Location = new System.Drawing.Point(580, 291);
       this._btnCancel.Name = "_btnCancel";
       this._btnCancel.Size = new System.Drawing.Size(75, 23);
       this._btnCancel.TabIndex = 1;
-      this._btnCancel.Text = "&Close";
+      this._btnCancel.Text = "&Cancel";
       this._btnCancel.UseVisualStyleBackColor = true;
       // 
       // _btnAdd
@@ -144,13 +121,67 @@
       this._btnDelete.UseVisualStyleBackColor = true;
       this._btnDelete.Click += new System.EventHandler(this._btnDelete_Click);
       // 
+      // _btnOk
+      // 
+      this._btnOk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+      this._btnOk.Location = new System.Drawing.Point(499, 291);
+      this._btnOk.Name = "_btnOk";
+      this._btnOk.Size = new System.Drawing.Size(75, 23);
+      this._btnOk.TabIndex = 6;
+      this._btnOk.Text = "&OK";
+      this._btnOk.UseVisualStyleBackColor = true;
+      this._btnOk.Click += new System.EventHandler(this._btnOk_Click);
+      // 
+      // sequenceIdDataGridViewTextBoxColumn
+      // 
+      this.sequenceIdDataGridViewTextBoxColumn.DataPropertyName = "SequenceId";
+      this.sequenceIdDataGridViewTextBoxColumn.HeaderText = "Sequence Id";
+      this.sequenceIdDataGridViewTextBoxColumn.Name = "sequenceIdDataGridViewTextBoxColumn";
+      this.sequenceIdDataGridViewTextBoxColumn.ReadOnly = true;
+      // 
+      // nameDataGridViewTextBoxColumn
+      // 
+      this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+      this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+      this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+      this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+      // 
+      // itemInventoryDateDataGridViewTextBoxColumn
+      // 
+      this.itemInventoryDateDataGridViewTextBoxColumn.DataPropertyName = "Date";
+      this.itemInventoryDateDataGridViewTextBoxColumn.HeaderText = "Date";
+      this.itemInventoryDateDataGridViewTextBoxColumn.Name = "itemInventoryDateDataGridViewTextBoxColumn";
+      this.itemInventoryDateDataGridViewTextBoxColumn.ReadOnly = true;
+      // 
+      // itemInventoryPriceDataGridViewTextBoxColumn
+      // 
+      this.itemInventoryPriceDataGridViewTextBoxColumn.DataPropertyName = "Price";
+      this.itemInventoryPriceDataGridViewTextBoxColumn.HeaderText = "Price";
+      this.itemInventoryPriceDataGridViewTextBoxColumn.Name = "itemInventoryPriceDataGridViewTextBoxColumn";
+      this.itemInventoryPriceDataGridViewTextBoxColumn.ReadOnly = true;
+      // 
+      // itemInventoryQuantityDataGridViewTextBoxColumn
+      // 
+      this.itemInventoryQuantityDataGridViewTextBoxColumn.DataPropertyName = "Quantity";
+      this.itemInventoryQuantityDataGridViewTextBoxColumn.HeaderText = "Quantity";
+      this.itemInventoryQuantityDataGridViewTextBoxColumn.Name = "itemInventoryQuantityDataGridViewTextBoxColumn";
+      this.itemInventoryQuantityDataGridViewTextBoxColumn.ReadOnly = true;
+      // 
+      // TotalPrice
+      // 
+      this.TotalPrice.DataPropertyName = "TotalPrice";
+      this.TotalPrice.HeaderText = "TotalPrice";
+      this.TotalPrice.Name = "TotalPrice";
+      this.TotalPrice.ReadOnly = true;
+      // 
       // OrderForm
       // 
-      this.AcceptButton = this._btnCancel;
+      this.AcceptButton = this._btnOk;
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this._btnCancel;
-      this.ClientSize = new System.Drawing.Size(578, 318);
+      this.ClientSize = new System.Drawing.Size(667, 318);
+      this.Controls.Add(this._btnOk);
       this.Controls.Add(this._btnDelete);
       this.Controls.Add(this._btnEdit);
       this.Controls.Add(this._btnAdd);
@@ -172,9 +203,12 @@
     private System.Windows.Forms.Button _btnAdd;
     private System.Windows.Forms.Button _btnEdit;
     private System.Windows.Forms.Button _btnDelete;
-    private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-    private System.Windows.Forms.DataGridViewTextBoxColumn codeDataGridViewTextBoxColumn;
-    private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
-    private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
+    private System.Windows.Forms.Button _btnOk;
+    private System.Windows.Forms.DataGridViewTextBoxColumn sequenceIdDataGridViewTextBoxColumn;
+    private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+    private System.Windows.Forms.DataGridViewTextBoxColumn itemInventoryDateDataGridViewTextBoxColumn;
+    private System.Windows.Forms.DataGridViewTextBoxColumn itemInventoryPriceDataGridViewTextBoxColumn;
+    private System.Windows.Forms.DataGridViewTextBoxColumn itemInventoryQuantityDataGridViewTextBoxColumn;
+    private System.Windows.Forms.DataGridViewTextBoxColumn TotalPrice;
   }
 }

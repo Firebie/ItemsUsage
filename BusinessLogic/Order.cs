@@ -17,7 +17,8 @@ namespace ItemsUsage.BusinessLogic
   public abstract class Order : EditableObject<Order>
   {
     [PrimaryKey, NonUpdatable]
-    public abstract int     Id          { get; set; }
+    public abstract int Id { get; set; }
+
     [MapField("car_id")]     public abstract int      CarId         { get; set; }
     [MapField("order_date")] public abstract DateTime OrderDateTime { get; set; }
   }

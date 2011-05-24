@@ -7,6 +7,7 @@ using BLToolkit.Data;
 using BLToolkit.Data.DataProvider;
 using BLToolkit.DataAccess;
 using BLToolkit.EditableObjects;
+using BLToolkit.Mapping;
 
 using ItemsUsage.BusinessLogic.DataAccess;
 
@@ -21,6 +22,7 @@ namespace ItemsUsage.BusinessLogic
     public abstract string  Description { get; set; }
     public abstract decimal Price       { get; set; }
 
+    [MapIgnore]
     public string DisplayString
     {
       get

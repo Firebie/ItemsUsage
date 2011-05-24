@@ -85,9 +85,10 @@ namespace ItemsUsage.Forms
 
     private void _gvItems_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
     {
-      DataGridViewRow row = _gvItems.Rows[e.RowIndex];
+      //DataGridViewRow row = _gvItems.Rows[e.RowIndex];
 
-      Edit((Inventory)row.DataBoundItem);
+      //Edit((Inventory)row.DataBoundItem);
+      onOK();
     }
 
     private void _btnDelete_Click(object sender, EventArgs e)
@@ -122,7 +123,7 @@ namespace ItemsUsage.Forms
       }
     }
 
-    private void _btnOk_Click(object sender, EventArgs e)
+    void onOK()
     {
       if (_gvItems.CurrentRow != null)
       {
@@ -131,6 +132,11 @@ namespace ItemsUsage.Forms
         DialogResult = DialogResult.OK;
         Close();
       }
+    }
+
+    private void _btnOk_Click(object sender, EventArgs e)
+    {
+      onOK();
     }
 
     private void _filter_TextChanged(object sender, EventArgs e)

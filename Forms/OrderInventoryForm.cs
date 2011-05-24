@@ -26,7 +26,6 @@ namespace ItemsUsage.Forms
 
       InitializeComponent();
 
-      _orderId.Text = _item.OrderId.ToString();
       _sequenceId.Text = _item.SequenceId.ToString();
       Inventory inventory = _model.GetInventory(_item.InventoryId);
       _inventory.Text = inventory != null ? inventory.DisplayString : string.Empty;
@@ -60,18 +59,10 @@ namespace ItemsUsage.Forms
       }
 
       _item.InventoryPrice = price;
+      _item.InventoryDate  = _date.Value.Date;
 
-      bool ok = false;
-      if (_newItem)
-        ok = _model.OrderInventoryInsert(_item);
-      else
-        ok = _model.OrderInventoryUpdate(_item);
-
-      if (ok)
-      {
-        DialogResult = DialogResult.OK;
-        Close();
-      }
+      DialogResult = DialogResult.OK;
+      Close();
     }
 
     private void _selectInventory_Click(object sender, EventArgs e)
