@@ -23,9 +23,6 @@ namespace ItemsUsage.Forms
       _newItem = newItem;
       InitializeComponent();
 
-      if (!_newItem)
-        _id.Text = _item.Id.ToString();
-
       _code.Text = _item.Code;
       _description.Text = _item.Description;
       _price.Text = _item.Price.ToString();

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using System.IO;
 
 using BLToolkit.Data;
 using BLToolkit.Data.DataProvider;
@@ -16,11 +17,24 @@ namespace ItemsUsage
     [STAThread]
     static void Main()
     {
-      DbManager.AddDataProvider(new SqlCeDataProvider());
-      DbManager.AddConnectionString("SqlCe", "", @"Data Source=C:\MyUsers\programs\manysrc\projects\ItemsUsage\db\ItemsUsage.sdf");
-      Application.EnableVisualStyles();
-      Application.SetCompatibleTextRenderingDefault(false);
-      Application.Run(new MainForm());
+      try
+      {
+        DbManager.AddDataProvider(new SqlCeDataProvider());
+        string dbPath = GetApplicationDirectory() + "\\ItemsUsage.sdf";
+        DbManager.AddConnectionString("SqlCe", "", @"Data Source=" + dbPath);
+        Application.EnableVisualStyles();
+        Application.SetCompatibleTextRenderingDefault(false);
+        Application.Run(new MainForm());
+      }
+      catch (System.Exception ex)
+      {
+        MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+      }
+    }
+
+    public static string GetApplicationDirectory()
+    {
+      return Path.GetDirectoryName(Application.ExecutablePath);
     }
   }
 }

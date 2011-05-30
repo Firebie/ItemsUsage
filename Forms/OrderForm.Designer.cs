@@ -50,6 +50,7 @@
       this.label3 = new System.Windows.Forms.Label();
       this._date = new System.Windows.Forms.DateTimePicker();
       this._btnPrint = new System.Windows.Forms.Button();
+      this._btnDesign = new System.Windows.Forms.Button();
       ((System.ComponentModel.ISupportInitialize)(this._gvItems)).BeginInit();
       this.SuspendLayout();
       // 
@@ -214,8 +215,7 @@
       // 
       // _allTotal
       // 
-      this._allTotal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+      this._allTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
       this._allTotal.Location = new System.Drawing.Point(550, 10);
       this._allTotal.Name = "_allTotal";
       this._allTotal.ReadOnly = true;
@@ -224,6 +224,7 @@
       // 
       // label2
       // 
+      this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
       this.label2.AutoSize = true;
       this.label2.Location = new System.Drawing.Point(496, 13);
       this.label2.Name = "label2";
@@ -233,6 +234,7 @@
       // 
       // label3
       // 
+      this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
       this.label3.AutoSize = true;
       this.label3.Location = new System.Drawing.Point(334, 13);
       this.label3.Name = "label3";
@@ -242,6 +244,7 @@
       // 
       // _date
       // 
+      this._date.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
       this._date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
       this._date.Location = new System.Drawing.Point(382, 10);
       this._date.Name = "_date";
@@ -251,13 +254,24 @@
       // _btnPrint
       // 
       this._btnPrint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-      this._btnPrint.Location = new System.Drawing.Point(292, 291);
+      this._btnPrint.Location = new System.Drawing.Point(373, 291);
       this._btnPrint.Name = "_btnPrint";
       this._btnPrint.Size = new System.Drawing.Size(75, 23);
       this._btnPrint.TabIndex = 14;
       this._btnPrint.Text = "&Print";
       this._btnPrint.UseVisualStyleBackColor = true;
       this._btnPrint.Click += new System.EventHandler(this._btnPrint_Click);
+      // 
+      // _btnDesign
+      // 
+      this._btnDesign.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+      this._btnDesign.Location = new System.Drawing.Point(292, 291);
+      this._btnDesign.Name = "_btnDesign";
+      this._btnDesign.Size = new System.Drawing.Size(75, 23);
+      this._btnDesign.TabIndex = 15;
+      this._btnDesign.Text = "&Design";
+      this._btnDesign.UseVisualStyleBackColor = true;
+      this._btnDesign.Click += new System.EventHandler(this._btnDesign_Click);
       // 
       // OrderForm
       // 
@@ -266,6 +280,7 @@
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this._btnCancel;
       this.ClientSize = new System.Drawing.Size(667, 318);
+      this.Controls.Add(this._btnDesign);
       this.Controls.Add(this._btnPrint);
       this.Controls.Add(this._date);
       this.Controls.Add(this.label3);
@@ -312,5 +327,6 @@
     private System.Windows.Forms.Label label3;
     private System.Windows.Forms.DateTimePicker _date;
     private System.Windows.Forms.Button _btnPrint;
+    private System.Windows.Forms.Button _btnDesign;
   }
 }

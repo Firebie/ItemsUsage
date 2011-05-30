@@ -33,6 +33,7 @@
       this._btnEdit = new System.Windows.Forms.Button();
       this._btnAdd = new System.Windows.Forms.Button();
       this._gvItems = new System.Windows.Forms.DataGridView();
+      this.objectBinder = new BLToolkit.ComponentModel.ObjectBinder(this.components);
       this._mainMenu = new System.Windows.Forms.MenuStrip();
       this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
@@ -41,7 +42,6 @@
       this.carsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.inventoriesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this._btnExit = new System.Windows.Forms.Button();
-      this.objectBinder = new BLToolkit.ComponentModel.ObjectBinder(this.components);
       this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.carNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -103,6 +103,13 @@
       this._gvItems.TabIndex = 6;
       this._gvItems.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this._gvItems_CellDoubleClick);
       // 
+      // objectBinder
+      // 
+      this.objectBinder.AllowEdit = false;
+      this.objectBinder.AllowNew = false;
+      this.objectBinder.AllowRemove = false;
+      this.objectBinder.ItemType = typeof(ItemsUsage.MainForm.GridItem);
+      // 
       // _mainMenu
       // 
       this._mainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -147,14 +154,14 @@
       // carsToolStripMenuItem
       // 
       this.carsToolStripMenuItem.Name = "carsToolStripMenuItem";
-      this.carsToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
+      this.carsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
       this.carsToolStripMenuItem.Text = "&Cars";
       this.carsToolStripMenuItem.Click += new System.EventHandler(this.carsToolStripMenuItem_Click);
       // 
       // inventoriesToolStripMenuItem
       // 
       this.inventoriesToolStripMenuItem.Name = "inventoriesToolStripMenuItem";
-      this.inventoriesToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
+      this.inventoriesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
       this.inventoriesToolStripMenuItem.Text = "&Inventories";
       this.inventoriesToolStripMenuItem.Click += new System.EventHandler(this.inventoriesToolStripMenuItem_Click);
       // 
@@ -170,17 +177,10 @@
       this._btnExit.UseVisualStyleBackColor = true;
       this._btnExit.Click += new System.EventHandler(this._btnExit_Click);
       // 
-      // objectBinder
-      // 
-      this.objectBinder.AllowEdit = false;
-      this.objectBinder.AllowNew = false;
-      this.objectBinder.AllowRemove = false;
-      this.objectBinder.ItemType = typeof(ItemsUsage.MainForm.GridItem);
-      // 
       // idDataGridViewTextBoxColumn
       // 
       this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-      this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+      this.idDataGridViewTextBoxColumn.HeaderText = "Order Id";
       this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
       this.idDataGridViewTextBoxColumn.ReadOnly = true;
       // 

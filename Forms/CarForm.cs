@@ -23,11 +23,6 @@ namespace ItemsUsage.Forms
       _newItem = newItem;
       InitializeComponent();
 
-      if (_newItem)
-        _id.Text = "(new item)";
-      else
-        _id.Text = _item.Id.ToString();
-
       _description.Text = _item.Description;
     }
 

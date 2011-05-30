@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Report ScriptLanguage="CSharp" ReportInfo.Created="05/30/2011 19:43:09" ReportInfo.Modified="05/30/2011 20:35:05" ReportInfo.CreatorVersion="1.6.19.0">
+<Report ScriptLanguage="CSharp" ReportInfo.Created="05/30/2011 19:43:09" ReportInfo.Modified="05/30/2011 23:51:10" ReportInfo.CreatorVersion="1.6.19.0">
   <Dictionary>
     <BusinessObjectDataSource Name="data" ReferenceName="data" DataType="BLToolkit.EditableObjects.EditableList`1[[ItemsUsage.Forms.OrderForm+GridItem, ItemsUsage, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], BLToolkit.4, Version=4.0.0.1052, Culture=neutral, PublicKeyToken=b1d3f6ab3aadaca3" Enabled="true">
       <Column Name="Date" DataType="System.DateTime"/>
@@ -17,52 +17,57 @@
       <Column Name="Item+SequenceId" Alias="SequenceId" Enabled="false" DataType="System.Int32"/>
     </BusinessObjectDataSource>
     <Parameter Name="OrderDate" DataType="System.DateTime"/>
-    <Parameter Name="OrderCar" DataType="System.Int32"/>
+    <Parameter Name="OrderCar" DataType="System.String"/>
     <Parameter Name="OrderPrice" DataType="System.Decimal"/>
   </Dictionary>
   <ReportPage Name="Page1">
     <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="47.25">
       <TextObject Name="Text1" Left="9.45" Top="9.45" Width="94.5" Height="18.9" Text="Дата заказа:"/>
-      <TextObject Name="Text2" Left="113.4" Top="9.45" Width="94.5" Height="18.9" Text="[OrderDate]"/>
-      <TextObject Name="Text3" Left="226.8" Top="9.45" Width="94.5" Height="18.9" Text="Авто:"/>
-      <TextObject Name="Text4" Left="321.3" Top="9.45" Width="94.5" Height="18.9" Text="[OrderCar]"/>
-      <TextObject Name="Text17" Left="444.15" Top="9.45" Width="132.3" Height="18.9" Text="Цена всего заказа:"/>
-      <TextObject Name="Text18" Left="585.9" Top="9.45" Width="122.85" Height="18.9" Text="[OrderPrice]"/>
+      <TextObject Name="Text2" Left="113.4" Top="9.45" Width="75.6" Height="18.9" Text="[OrderDate]"/>
+      <TextObject Name="Text3" Left="189" Top="9.45" Width="47.25" Height="18.9" Text="Авто:"/>
+      <TextObject Name="Text4" Left="236.25" Top="9.45" Width="94.5" Height="18.9" Text="[OrderCar]"/>
+      <TextObject Name="Text17" Left="340.2" Top="9.45" Width="56.7" Height="18.9" Text="Сумма:"/>
+      <TextObject Name="Text18" Left="396.9" Top="9.45" Width="122.85" Height="18.9" Text="[OrderPrice]"/>
     </ReportTitleBand>
-    <PageHeaderBand Name="PageHeader1" Top="51.25" Width="718.2" Height="56.7">
-      <TextObject Name="Text6" Left="226.8" Top="28.35" Width="94.5" Height="18.9" Text="Дата"/>
-      <TextObject Name="Text8" Left="434.7" Top="28.35" Width="103.95" Height="18.9" Text="Количество шт."/>
-      <TextObject Name="Text10" Left="9.45" Top="28.35" Width="94.5" Height="18.9" Text="Номер"/>
-      <TextObject Name="Text12" Left="122.85" Top="28.35" Width="94.5" Height="18.9" Text="Название"/>
-      <TextObject Name="Text14" Left="330.75" Top="28.35" Width="94.5" Height="18.9" Text="Цена за 1 ед."/>
-      <TextObject Name="Text16" Left="548.1" Top="28.35" Width="94.5" Height="18.9" Text="Общая цена"/>
-      <LineObject Name="Line1" Left="9.45" Top="18.9" Width="680.4"/>
-      <LineObject Name="Line2" Left="9.45" Top="56.7" Width="680.4"/>
-      <LineObject Name="Line3" Left="9.45" Top="18.9" Height="37.8"/>
-      <LineObject Name="Line4" Left="103.95" Top="18.9" Height="37.8"/>
-      <LineObject Name="Line5" Left="689.85" Top="18.9" Height="37.8"/>
-      <LineObject Name="Line6" Left="538.65" Top="18.9" Height="37.8"/>
-      <LineObject Name="Line7" Left="425.25" Top="18.9" Height="37.8"/>
-      <LineObject Name="Line8" Left="321.3" Top="18.9" Height="37.8"/>
-      <LineObject Name="Line9" Left="217.35" Top="18.9" Height="37.8"/>
+    <PageHeaderBand Name="PageHeader1" Top="51.25" Width="718.2" Height="28.35">
+      <TableObject Name="Table2" Left="9.45" Top="9.45" Width="680.64" Height="18.9">
+        <TableColumn Name="Column7" Width="113.44"/>
+        <TableColumn Name="Column8" Width="113.44"/>
+        <TableColumn Name="Column9" Width="113.44"/>
+        <TableColumn Name="Column10" Width="113.44"/>
+        <TableColumn Name="Column11" Width="113.44"/>
+        <TableColumn Name="Column12" Width="113.44"/>
+        <TableRow Name="Row2">
+          <TableCell Name="Cell7" Border.Lines="All" Text="Номер"/>
+          <TableCell Name="Cell8" Border.Lines="All" Text="Название"/>
+          <TableCell Name="Cell9" Border.Lines="All" Text="Дата"/>
+          <TableCell Name="Cell10" Border.Lines="All" Text="Цена (1 ед.)"/>
+          <TableCell Name="Cell11" Border.Lines="All" Text="Количество"/>
+          <TableCell Name="Cell12" Border.Lines="All" Text="Сумма"/>
+        </TableRow>
+      </TableObject>
     </PageHeaderBand>
-    <DataBand Name="Data1" Top="111.95" Width="718.2" Height="255.15" DataSource="data">
-      <TextObject Name="Text9" Left="9.45" Top="9.45" Width="94.5" Height="18.9" Text="[data.SequenceId]"/>
-      <TextObject Name="Text5" Left="226.8" Top="9.45" Width="94.5" Height="18.9" Text="[data.Date]" Format="Date" Format.Format="d"/>
-      <TextObject Name="Text7" Left="444.15" Top="9.45" Width="94.5" Height="18.9" Text="[data.Quantity]"/>
-      <TextObject Name="Text11" Left="113.4" Top="9.45" Width="94.5" Height="18.9" Text="[data.Name]"/>
-      <TextObject Name="Text13" Left="330.75" Top="9.45" Width="94.5" Height="18.9" Text="[data.InventoryPrice]" Format="Currency" Format.UseLocale="true" HorzAlign="Right" WordWrap="false" Trimming="EllipsisCharacter"/>
-      <TextObject Name="Text15" Left="548.1" Top="9.45" Width="94.5" Height="18.9" Text="[data.TotalPrice]" Format="Currency" Format.UseLocale="true" HorzAlign="Right" WordWrap="false" Trimming="EllipsisCharacter"/>
-      <LineObject Name="Line10" Left="9.45" Width="680.4"/>
-      <LineObject Name="Line11" Left="9.45" Top="37.8" Width="680.4"/>
-      <LineObject Name="Line12" Left="9.45" Height="37.8"/>
-      <LineObject Name="Line13" Left="103.95" Height="37.8"/>
-      <LineObject Name="Line14" Left="217.35" Height="37.8"/>
-      <LineObject Name="Line15" Left="321.3" Height="37.8"/>
-      <LineObject Name="Line16" Left="425.25" Height="37.8"/>
-      <LineObject Name="Line17" Left="538.65" Height="37.8"/>
-      <LineObject Name="Line18" Left="689.85" Height="37.8"/>
+    <DataBand Name="Data1" Top="83.6" Width="718.2" Height="18.9" DataSource="data">
+      <TableObject Name="Table1" Left="9.45" Width="680.82" Height="18.9" Border.Lines="All">
+        <TableColumn Name="Column1" Width="113.47"/>
+        <TableColumn Name="Column2" Width="113.47"/>
+        <TableColumn Name="Column3" Width="113.47"/>
+        <TableColumn Name="Column4" Width="113.47"/>
+        <TableColumn Name="Column5" Width="113.47"/>
+        <TableColumn Name="Column6" Width="113.47"/>
+        <TableRow Name="Row1">
+          <TableCell Name="Cell1" Border.Lines="All" Text="[data.SequenceId]"/>
+          <TableCell Name="Cell2" Border.Lines="All" Text="[data.Name]"/>
+          <TableCell Name="Cell3" Border.Lines="All" Text="[data.Date]"/>
+          <TableCell Name="Cell4" Border.Lines="All" Text="[data.Price]"/>
+          <TableCell Name="Cell5" Border.Lines="All" Text="[data.Quantity]"/>
+          <TableCell Name="Cell6" Text="[data.TotalPrice]"/>
+        </TableRow>
+      </TableObject>
     </DataBand>
-    <PageFooterBand Name="PageFooter1" Top="371.1" Width="718.2" Height="47.25"/>
+    <PageFooterBand Name="PageFooter1" Top="106.5" Width="718.2" Height="47.25">
+      <TextObject Name="Text5" Left="642.6" Top="9.45" Width="94.5" Height="18.9" Text="[Page]"/>
+      <TextObject Name="Text6" Left="576.45" Top="9.45" Width="66.15" Height="18.9" Text="Страница:"/>
+    </PageFooterBand>
   </ReportPage>
 </Report>

@@ -34,11 +34,10 @@
       this._btnAdd = new System.Windows.Forms.Button();
       this._btnEdit = new System.Windows.Forms.Button();
       this._btnDelete = new System.Windows.Forms.Button();
-      this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.objectBinder = new BLToolkit.ComponentModel.ObjectBinder(this.components);
       this.codeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.objectBinder = new BLToolkit.ComponentModel.ObjectBinder(this.components);
       ((System.ComponentModel.ISupportInitialize)(this._gvItems)).BeginInit();
       this.SuspendLayout();
       // 
@@ -52,7 +51,6 @@
       this._gvItems.AutoGenerateColumns = false;
       this._gvItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
       this._gvItems.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
             this.codeDataGridViewTextBoxColumn,
             this.descriptionDataGridViewTextBoxColumn,
             this.priceDataGridViewTextBoxColumn});
@@ -60,7 +58,7 @@
       this._gvItems.Location = new System.Drawing.Point(12, 2);
       this._gvItems.Name = "_gvItems";
       this._gvItems.ReadOnly = true;
-      this._gvItems.Size = new System.Drawing.Size(554, 284);
+      this._gvItems.Size = new System.Drawing.Size(443, 284);
       this._gvItems.TabIndex = 0;
       this._gvItems.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this._gvItems_CellDoubleClick);
       // 
@@ -68,7 +66,7 @@
       // 
       this._btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
       this._btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-      this._btnCancel.Location = new System.Drawing.Point(491, 291);
+      this._btnCancel.Location = new System.Drawing.Point(380, 291);
       this._btnCancel.Name = "_btnCancel";
       this._btnCancel.Size = new System.Drawing.Size(75, 23);
       this._btnCancel.TabIndex = 1;
@@ -108,12 +106,12 @@
       this._btnDelete.UseVisualStyleBackColor = true;
       this._btnDelete.Click += new System.EventHandler(this._btnDelete_Click);
       // 
-      // idDataGridViewTextBoxColumn
+      // objectBinder
       // 
-      this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-      this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-      this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-      this.idDataGridViewTextBoxColumn.ReadOnly = true;
+      this.objectBinder.AllowEdit = false;
+      this.objectBinder.AllowNew = false;
+      this.objectBinder.AllowRemove = false;
+      this.objectBinder.ItemType = typeof(ItemsUsage.BusinessLogic.Inventory);
       // 
       // codeDataGridViewTextBoxColumn
       // 
@@ -137,20 +135,13 @@
       this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
       this.priceDataGridViewTextBoxColumn.ReadOnly = true;
       // 
-      // objectBinder
-      // 
-      this.objectBinder.AllowEdit = false;
-      this.objectBinder.AllowNew = false;
-      this.objectBinder.AllowRemove = false;
-      this.objectBinder.ItemType = typeof(ItemsUsage.BusinessLogic.Inventory);
-      // 
       // InventoriesForm
       // 
       this.AcceptButton = this._btnCancel;
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this._btnCancel;
-      this.ClientSize = new System.Drawing.Size(578, 318);
+      this.ClientSize = new System.Drawing.Size(467, 318);
       this.Controls.Add(this._btnDelete);
       this.Controls.Add(this._btnEdit);
       this.Controls.Add(this._btnAdd);
@@ -172,7 +163,6 @@
     private System.Windows.Forms.Button _btnAdd;
     private System.Windows.Forms.Button _btnEdit;
     private System.Windows.Forms.Button _btnDelete;
-    private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
     private System.Windows.Forms.DataGridViewTextBoxColumn codeDataGridViewTextBoxColumn;
     private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
     private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;

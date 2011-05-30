@@ -67,14 +67,24 @@ namespace ItemsUsage
     {
       InitializeComponent();
 
+      InitCars();
+      ShowOrders();
+    }
+
+    void InitCars()
+    {
+      _cars.Clear();
       foreach (Car car in _model.CarGetAll())
         _cars.Add(car.Id, car);
+    }
 
+    void ShowOrders()
+    {
       EditableList<GridItem> items = new EditableList<GridItem>();
       using (DbManager db = new DbManager())
         foreach (Order order in new OrderAccessor().GetAll(db))
           items.Add(new GridItem(order, GetCarName(order.CarId)));
-         
+
 
       objectBinder.List = items;
     }
@@ -97,6 +107,8 @@ namespace ItemsUsage
     private void carsToolStripMenuItem_Click(object sender, EventArgs e)
     {
       new CarsForm(_model).ShowDialog();
+      InitCars();
+      ShowOrders();
     }
 
     private void inventoriesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -130,6 +142,8 @@ namespace ItemsUsage
       {
         if (form.ShowDialog() != DialogResult.OK)
           item.RejectChanges();
+        else
+          ShowOrders();
       }
     }
 

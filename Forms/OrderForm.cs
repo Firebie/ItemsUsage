@@ -280,19 +280,50 @@ namespace ItemsUsage.Forms
       _allTotal.Text = GetTotal().ToString();
     }
 
+    void PrepareReport(Report report)
+    {
+      Car car = _model.GetCar(_order.CarId);
+      report.Load(Program.GetApplicationDirectory() + "\\Order.frx");
+      report.SetParameterValue("OrderDate", _order.OrderDateTime);
+      report.SetParameterValue("OrderCar", car != null ? car.DisplayString : string.Empty);
+      report.SetParameterValue("OrderPrice", GetTotal());
+      report.RegisterData(_gridItems, "data");
+    }
+
     private void _btnPrint_Click(object sender, EventArgs e)
     {
       if (Save())
       {
-        using (Report report = new Report())
+        try
         {
-          report.Load(@"C:\MyUsers\programs\manysrc\projects\ItemsUsage\Reports\Order.frx");
-          report.SetParameterValue("OrderDate", _order.OrderDateTime);
-          report.SetParameterValue("OrderCar", _order.CarId);
-          report.SetParameterValue("OrderPrice", GetTotal());
-          report.RegisterData(_gridItems, "data");
-          report.Design(true);
-          //report.Show();
+          using (Report report = new Report())
+          {
+            PrepareReport(report);
+            report.Show();
+          }
+        }
+        catch (System.Exception ex)
+        {
+          MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+      }
+    }
+
+    private void _btnDesign_Click(object sender, EventArgs e)
+    {
+      if (Save())
+      {
+        try
+        {
+          using (Report report = new Report())
+          {
+            PrepareReport(report);
+            report.Design(true);
+          }
+        }
+        catch (System.Exception ex)
+        {
+          MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
       }
     }
