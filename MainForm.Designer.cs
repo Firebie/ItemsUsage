@@ -52,22 +52,22 @@
       // _btnDelete
       // 
       this._btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-      this._btnDelete.Location = new System.Drawing.Point(174, 344);
+      this._btnDelete.Location = new System.Drawing.Point(216, 344);
       this._btnDelete.Name = "_btnDelete";
-      this._btnDelete.Size = new System.Drawing.Size(75, 23);
+      this._btnDelete.Size = new System.Drawing.Size(96, 23);
       this._btnDelete.TabIndex = 9;
-      this._btnDelete.Text = "Delete";
+      this._btnDelete.Text = "Удалить";
       this._btnDelete.UseVisualStyleBackColor = true;
       this._btnDelete.Click += new System.EventHandler(this._btnDelete_Click);
       // 
       // _btnEdit
       // 
       this._btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-      this._btnEdit.Location = new System.Drawing.Point(93, 344);
+      this._btnEdit.Location = new System.Drawing.Point(114, 344);
       this._btnEdit.Name = "_btnEdit";
-      this._btnEdit.Size = new System.Drawing.Size(75, 23);
+      this._btnEdit.Size = new System.Drawing.Size(96, 23);
       this._btnEdit.TabIndex = 8;
-      this._btnEdit.Text = "Edit";
+      this._btnEdit.Text = "Редактировать";
       this._btnEdit.UseVisualStyleBackColor = true;
       this._btnEdit.Click += new System.EventHandler(this._btnEdit_Click);
       // 
@@ -76,9 +76,9 @@
       this._btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
       this._btnAdd.Location = new System.Drawing.Point(12, 344);
       this._btnAdd.Name = "_btnAdd";
-      this._btnAdd.Size = new System.Drawing.Size(75, 23);
+      this._btnAdd.Size = new System.Drawing.Size(96, 23);
       this._btnAdd.TabIndex = 7;
-      this._btnAdd.Text = "Add";
+      this._btnAdd.Text = "Добавить";
       this._btnAdd.UseVisualStyleBackColor = true;
       this._btnAdd.Click += new System.EventHandler(this._btnAdd_Click);
       // 
@@ -127,8 +127,8 @@
             this.toolStripMenuItem1,
             this.exitToolStripMenuItem});
       this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-      this.fileToolStripMenuItem.Size = new System.Drawing.Size(35, 20);
-      this.fileToolStripMenuItem.Text = "&File";
+      this.fileToolStripMenuItem.Size = new System.Drawing.Size(45, 20);
+      this.fileToolStripMenuItem.Text = "&Файл";
       // 
       // toolStripMenuItem1
       // 
@@ -138,8 +138,8 @@
       // exitToolStripMenuItem
       // 
       this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-      this.exitToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
-      this.exitToolStripMenuItem.Text = "E&xit";
+      this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+      this.exitToolStripMenuItem.Text = "Выход";
       this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
       // 
       // tooslToolStripMenuItem
@@ -148,21 +148,21 @@
             this.carsToolStripMenuItem,
             this.inventoriesToolStripMenuItem});
       this.tooslToolStripMenuItem.Name = "tooslToolStripMenuItem";
-      this.tooslToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-      this.tooslToolStripMenuItem.Text = "&Tools";
+      this.tooslToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
+      this.tooslToolStripMenuItem.Text = "&Настройки";
       // 
       // carsToolStripMenuItem
       // 
       this.carsToolStripMenuItem.Name = "carsToolStripMenuItem";
       this.carsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-      this.carsToolStripMenuItem.Text = "&Cars";
+      this.carsToolStripMenuItem.Text = "Машины";
       this.carsToolStripMenuItem.Click += new System.EventHandler(this.carsToolStripMenuItem_Click);
       // 
       // inventoriesToolStripMenuItem
       // 
       this.inventoriesToolStripMenuItem.Name = "inventoriesToolStripMenuItem";
       this.inventoriesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-      this.inventoriesToolStripMenuItem.Text = "&Inventories";
+      this.inventoriesToolStripMenuItem.Text = "Предметы";
       this.inventoriesToolStripMenuItem.Click += new System.EventHandler(this.inventoriesToolStripMenuItem_Click);
       // 
       // _btnExit
@@ -173,28 +173,29 @@
       this._btnExit.Name = "_btnExit";
       this._btnExit.Size = new System.Drawing.Size(75, 23);
       this._btnExit.TabIndex = 11;
-      this._btnExit.Text = "&Exit";
+      this._btnExit.Text = "Выход";
       this._btnExit.UseVisualStyleBackColor = true;
       this._btnExit.Click += new System.EventHandler(this._btnExit_Click);
       // 
       // idDataGridViewTextBoxColumn
       // 
       this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-      this.idDataGridViewTextBoxColumn.HeaderText = "Order Id";
+      this.idDataGridViewTextBoxColumn.HeaderText = "Номер заказа";
       this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
       this.idDataGridViewTextBoxColumn.ReadOnly = true;
+      this.idDataGridViewTextBoxColumn.Width = 150;
       // 
       // dateDataGridViewTextBoxColumn
       // 
       this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
-      this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
+      this.dateDataGridViewTextBoxColumn.HeaderText = "Дата";
       this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
       this.dateDataGridViewTextBoxColumn.ReadOnly = true;
       // 
       // carNameDataGridViewTextBoxColumn
       // 
       this.carNameDataGridViewTextBoxColumn.DataPropertyName = "CarName";
-      this.carNameDataGridViewTextBoxColumn.HeaderText = "Car";
+      this.carNameDataGridViewTextBoxColumn.HeaderText = "Машина";
       this.carNameDataGridViewTextBoxColumn.Name = "carNameDataGridViewTextBoxColumn";
       this.carNameDataGridViewTextBoxColumn.ReadOnly = true;
       // 
@@ -213,7 +214,7 @@
       this.MainMenuStrip = this._mainMenu;
       this.Name = "MainForm";
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-      this.Text = "Main";
+      this.Text = "Заказы";
       ((System.ComponentModel.ISupportInitialize)(this._gvItems)).EndInit();
       this._mainMenu.ResumeLayout(false);
       this._mainMenu.PerformLayout();

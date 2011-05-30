@@ -69,7 +69,7 @@ namespace ItemsUsage.Forms
       {
         DialogResult dr = 
           MessageBox.Show(
-            "Are you sure to delete the item?", 
+            "Вы уверены что хотите удалить эту машину?", 
             "Warning", 
             MessageBoxButtons.OKCancel, 
             MessageBoxIcon.Question);

@@ -30,14 +30,14 @@
     {
       this.components = new System.ComponentModel.Container();
       this._gvItems = new System.Windows.Forms.DataGridView();
-      this.objectBinder = new BLToolkit.ComponentModel.ObjectBinder(this.components);
       this._btnCancel = new System.Windows.Forms.Button();
       this._btnOk = new System.Windows.Forms.Button();
+      this.label1 = new System.Windows.Forms.Label();
+      this._filter = new System.Windows.Forms.TextBox();
+      this.objectBinder = new BLToolkit.ComponentModel.ObjectBinder(this.components);
       this.codeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.label1 = new System.Windows.Forms.Label();
-      this._filter = new System.Windows.Forms.TextBox();
       ((System.ComponentModel.ISupportInitialize)(this._gvItems)).BeginInit();
       this.SuspendLayout();
       // 
@@ -62,13 +62,6 @@
       this._gvItems.TabIndex = 0;
       this._gvItems.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this._gvItems_CellDoubleClick);
       // 
-      // objectBinder
-      // 
-      this.objectBinder.AllowEdit = false;
-      this.objectBinder.AllowNew = false;
-      this.objectBinder.AllowRemove = false;
-      this.objectBinder.ItemType = typeof(ItemsUsage.BusinessLogic.Inventory);
-      // 
       // _btnCancel
       // 
       this._btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -92,17 +85,41 @@
       this._btnOk.UseVisualStyleBackColor = true;
       this._btnOk.Click += new System.EventHandler(this._btnOk_Click);
       // 
+      // label1
+      // 
+      this.label1.AutoSize = true;
+      this.label1.Location = new System.Drawing.Point(12, 13);
+      this.label1.Name = "label1";
+      this.label1.Size = new System.Drawing.Size(50, 13);
+      this.label1.TabIndex = 3;
+      this.label1.Text = "Фильтр:";
+      // 
+      // _filter
+      // 
+      this._filter.Location = new System.Drawing.Point(68, 10);
+      this._filter.Name = "_filter";
+      this._filter.Size = new System.Drawing.Size(387, 20);
+      this._filter.TabIndex = 4;
+      this._filter.TextChanged += new System.EventHandler(this._filter_TextChanged);
+      // 
+      // objectBinder
+      // 
+      this.objectBinder.AllowEdit = false;
+      this.objectBinder.AllowNew = false;
+      this.objectBinder.AllowRemove = false;
+      this.objectBinder.ItemType = typeof(ItemsUsage.BusinessLogic.Inventory);
+      // 
       // codeDataGridViewTextBoxColumn
       // 
       this.codeDataGridViewTextBoxColumn.DataPropertyName = "Code";
-      this.codeDataGridViewTextBoxColumn.HeaderText = "Code";
+      this.codeDataGridViewTextBoxColumn.HeaderText = "Код";
       this.codeDataGridViewTextBoxColumn.Name = "codeDataGridViewTextBoxColumn";
       this.codeDataGridViewTextBoxColumn.ReadOnly = true;
       // 
       // descriptionDataGridViewTextBoxColumn
       // 
       this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
-      this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
+      this.descriptionDataGridViewTextBoxColumn.HeaderText = "Название";
       this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
       this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
       this.descriptionDataGridViewTextBoxColumn.Width = 200;
@@ -110,26 +127,9 @@
       // priceDataGridViewTextBoxColumn
       // 
       this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
-      this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
+      this.priceDataGridViewTextBoxColumn.HeaderText = "Цена";
       this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
       this.priceDataGridViewTextBoxColumn.ReadOnly = true;
-      // 
-      // label1
-      // 
-      this.label1.AutoSize = true;
-      this.label1.Location = new System.Drawing.Point(12, 13);
-      this.label1.Name = "label1";
-      this.label1.Size = new System.Drawing.Size(32, 13);
-      this.label1.TabIndex = 3;
-      this.label1.Text = "Filter:";
-      // 
-      // _filter
-      // 
-      this._filter.Location = new System.Drawing.Point(50, 10);
-      this._filter.Name = "_filter";
-      this._filter.Size = new System.Drawing.Size(405, 20);
-      this._filter.TabIndex = 4;
-      this._filter.TextChanged += new System.EventHandler(this._filter_TextChanged);
       // 
       // SelectInventoryForm
       // 
@@ -145,7 +145,7 @@
       this.Controls.Add(this._gvItems);
       this.Name = "SelectInventoryForm";
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-      this.Text = "Select Inventory";
+      this.Text = "Выбор предмета";
       ((System.ComponentModel.ISupportInitialize)(this._gvItems)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
@@ -158,10 +158,10 @@
     private System.Windows.Forms.Button _btnCancel;
     private BLToolkit.ComponentModel.ObjectBinder objectBinder;
     private System.Windows.Forms.Button _btnOk;
+    private System.Windows.Forms.Label label1;
+    private System.Windows.Forms.TextBox _filter;
     private System.Windows.Forms.DataGridViewTextBoxColumn codeDataGridViewTextBoxColumn;
     private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
     private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
-    private System.Windows.Forms.Label label1;
-    private System.Windows.Forms.TextBox _filter;
   }
 }

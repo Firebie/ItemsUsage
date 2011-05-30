@@ -115,7 +115,7 @@ namespace ItemsUsage.Forms
 
     string GetInventoryName(int id)
     {
-      string name = "(no name)";
+      string name = "(нет имени)";
       Inventory inv;
       if (_inventories.TryGetValue(id, out inv))
         name = inv.DisplayString;
@@ -176,7 +176,7 @@ namespace ItemsUsage.Forms
       {
         DialogResult dr =
           MessageBox.Show(
-            "Are you sure to delete the item?",
+            "Вы уверены, что хотите удалить эту запись?",
             "Warning",
             MessageBoxButtons.OKCancel,
             MessageBoxIcon.Question);
@@ -251,7 +251,7 @@ namespace ItemsUsage.Forms
     void SetCar()
     {
       Car car = _model.GetCar(_order.CarId);
-      _car.Text = car != null ? car.DisplayString : "(no car selected)";
+      _car.Text = car != null ? car.DisplayString : "(машина не выбрана)";
     }
 
     private void _selectCar_Click(object sender, EventArgs e)

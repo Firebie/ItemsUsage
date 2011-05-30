@@ -34,8 +34,8 @@
       this._btnAdd = new System.Windows.Forms.Button();
       this._btnEdit = new System.Windows.Forms.Button();
       this._btnDelete = new System.Windows.Forms.Button();
-      this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.objectBinder = new BLToolkit.ComponentModel.ObjectBinder(this.components);
+      this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       ((System.ComponentModel.ISupportInitialize)(this._gvItems)).BeginInit();
       this.SuspendLayout();
       // 
@@ -66,7 +66,7 @@
       this._btnCancel.Name = "_btnCancel";
       this._btnCancel.Size = new System.Drawing.Size(75, 23);
       this._btnCancel.TabIndex = 1;
-      this._btnCancel.Text = "&Close";
+      this._btnCancel.Text = "Закрыть";
       this._btnCancel.UseVisualStyleBackColor = true;
       // 
       // _btnAdd
@@ -74,41 +74,33 @@
       this._btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
       this._btnAdd.Location = new System.Drawing.Point(13, 291);
       this._btnAdd.Name = "_btnAdd";
-      this._btnAdd.Size = new System.Drawing.Size(75, 23);
+      this._btnAdd.Size = new System.Drawing.Size(95, 23);
       this._btnAdd.TabIndex = 3;
-      this._btnAdd.Text = "Add";
+      this._btnAdd.Text = "Добавить";
       this._btnAdd.UseVisualStyleBackColor = true;
       this._btnAdd.Click += new System.EventHandler(this._btnAdd_Click);
       // 
       // _btnEdit
       // 
       this._btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-      this._btnEdit.Location = new System.Drawing.Point(94, 291);
+      this._btnEdit.Location = new System.Drawing.Point(114, 291);
       this._btnEdit.Name = "_btnEdit";
-      this._btnEdit.Size = new System.Drawing.Size(75, 23);
+      this._btnEdit.Size = new System.Drawing.Size(95, 23);
       this._btnEdit.TabIndex = 4;
-      this._btnEdit.Text = "Edit";
+      this._btnEdit.Text = "Редактировать";
       this._btnEdit.UseVisualStyleBackColor = true;
       this._btnEdit.Click += new System.EventHandler(this._btnEdit_Click);
       // 
       // _btnDelete
       // 
       this._btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-      this._btnDelete.Location = new System.Drawing.Point(175, 291);
+      this._btnDelete.Location = new System.Drawing.Point(215, 292);
       this._btnDelete.Name = "_btnDelete";
-      this._btnDelete.Size = new System.Drawing.Size(75, 23);
+      this._btnDelete.Size = new System.Drawing.Size(95, 23);
       this._btnDelete.TabIndex = 5;
-      this._btnDelete.Text = "Delete";
+      this._btnDelete.Text = "Удалить";
       this._btnDelete.UseVisualStyleBackColor = true;
       this._btnDelete.Click += new System.EventHandler(this._btnDelete_Click);
-      // 
-      // descriptionDataGridViewTextBoxColumn
-      // 
-      this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
-      this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
-      this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
-      this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
-      this.descriptionDataGridViewTextBoxColumn.Width = 400;
       // 
       // objectBinder
       // 
@@ -116,6 +108,14 @@
       this.objectBinder.AllowNew = false;
       this.objectBinder.AllowRemove = false;
       this.objectBinder.ItemType = typeof(ItemsUsage.BusinessLogic.Car);
+      // 
+      // descriptionDataGridViewTextBoxColumn
+      // 
+      this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
+      this.descriptionDataGridViewTextBoxColumn.HeaderText = "Название";
+      this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+      this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
+      this.descriptionDataGridViewTextBoxColumn.Width = 400;
       // 
       // CarsForm
       // 
@@ -131,7 +131,7 @@
       this.Controls.Add(this._gvItems);
       this.Name = "CarsForm";
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-      this.Text = "Cars";
+      this.Text = "Машины";
       ((System.ComponentModel.ISupportInitialize)(this._gvItems)).EndInit();
       this.ResumeLayout(false);
 

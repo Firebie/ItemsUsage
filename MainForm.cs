@@ -13,6 +13,7 @@ using BLToolkit.EditableObjects;
 
 using ItemsUsage.BusinessLogic;
 using ItemsUsage.Forms;
+using ItemsUsage.Properties;
 
 namespace ItemsUsage
 {
@@ -66,6 +67,9 @@ namespace ItemsUsage
     public MainForm()
     {
       InitializeComponent();
+
+      carsToolStripMenuItem.Text = Resources.Cars;
+      inventoriesToolStripMenuItem.Text = Resources.Inventories;
 
       InitCars();
       ShowOrders();

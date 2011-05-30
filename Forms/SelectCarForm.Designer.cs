@@ -34,8 +34,8 @@
       this._btnOk = new System.Windows.Forms.Button();
       this.label1 = new System.Windows.Forms.Label();
       this._filter = new System.Windows.Forms.TextBox();
-      this.displayStringDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.objectBinder = new BLToolkit.ComponentModel.ObjectBinder(this.components);
+      this.displayStringDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       ((System.ComponentModel.ISupportInitialize)(this._gvItems)).BeginInit();
       this.SuspendLayout();
       // 
@@ -86,25 +86,17 @@
       this.label1.AutoSize = true;
       this.label1.Location = new System.Drawing.Point(12, 13);
       this.label1.Name = "label1";
-      this.label1.Size = new System.Drawing.Size(32, 13);
+      this.label1.Size = new System.Drawing.Size(50, 13);
       this.label1.TabIndex = 3;
-      this.label1.Text = "Filter:";
+      this.label1.Text = "Фильтр:";
       // 
       // _filter
       // 
-      this._filter.Location = new System.Drawing.Point(50, 10);
+      this._filter.Location = new System.Drawing.Point(68, 10);
       this._filter.Name = "_filter";
-      this._filter.Size = new System.Drawing.Size(405, 20);
+      this._filter.Size = new System.Drawing.Size(387, 20);
       this._filter.TabIndex = 4;
       this._filter.TextChanged += new System.EventHandler(this._filter_TextChanged);
-      // 
-      // displayStringDataGridViewTextBoxColumn
-      // 
-      this.displayStringDataGridViewTextBoxColumn.DataPropertyName = "DisplayString";
-      this.displayStringDataGridViewTextBoxColumn.HeaderText = "Car";
-      this.displayStringDataGridViewTextBoxColumn.Name = "displayStringDataGridViewTextBoxColumn";
-      this.displayStringDataGridViewTextBoxColumn.ReadOnly = true;
-      this.displayStringDataGridViewTextBoxColumn.Width = 300;
       // 
       // objectBinder
       // 
@@ -112,6 +104,14 @@
       this.objectBinder.AllowNew = false;
       this.objectBinder.AllowRemove = false;
       this.objectBinder.ItemType = typeof(ItemsUsage.BusinessLogic.Car);
+      // 
+      // displayStringDataGridViewTextBoxColumn
+      // 
+      this.displayStringDataGridViewTextBoxColumn.DataPropertyName = "DisplayString";
+      this.displayStringDataGridViewTextBoxColumn.HeaderText = "Название";
+      this.displayStringDataGridViewTextBoxColumn.Name = "displayStringDataGridViewTextBoxColumn";
+      this.displayStringDataGridViewTextBoxColumn.ReadOnly = true;
+      this.displayStringDataGridViewTextBoxColumn.Width = 300;
       // 
       // SelectCarForm
       // 
@@ -127,7 +127,7 @@
       this.Controls.Add(this._gvItems);
       this.Name = "SelectCarForm";
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-      this.Text = "Select Car";
+      this.Text = "Выбор машины";
       ((System.ComponentModel.ISupportInitialize)(this._gvItems)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();

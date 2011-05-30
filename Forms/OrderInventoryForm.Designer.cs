@@ -48,9 +48,9 @@
       this.label2.AutoSize = true;
       this.label2.Location = new System.Drawing.Point(7, 41);
       this.label2.Name = "label2";
-      this.label2.Size = new System.Drawing.Size(54, 13);
+      this.label2.Size = new System.Drawing.Size(55, 13);
       this.label2.TabIndex = 2;
-      this.label2.Text = "Inventory:";
+      this.label2.Text = "Предмет:";
       // 
       // _inventory
       // 
@@ -89,18 +89,18 @@
       this.label3.AutoSize = true;
       this.label3.Location = new System.Drawing.Point(7, 15);
       this.label3.Name = "label3";
-      this.label3.Size = new System.Drawing.Size(59, 13);
+      this.label3.Size = new System.Drawing.Size(44, 13);
       this.label3.TabIndex = 5;
-      this.label3.Text = "Sequence:";
+      this.label3.Text = "Номер:";
       // 
       // label4
       // 
       this.label4.AutoSize = true;
       this.label4.Location = new System.Drawing.Point(7, 93);
       this.label4.Name = "label4";
-      this.label4.Size = new System.Drawing.Size(34, 13);
+      this.label4.Size = new System.Drawing.Size(36, 13);
       this.label4.TabIndex = 6;
-      this.label4.Text = "Price:";
+      this.label4.Text = "Цена:";
       // 
       // _price
       // 
@@ -140,18 +140,18 @@
       this.label5.AutoSize = true;
       this.label5.Location = new System.Drawing.Point(7, 67);
       this.label5.Name = "label5";
-      this.label5.Size = new System.Drawing.Size(49, 13);
+      this.label5.Size = new System.Drawing.Size(69, 13);
       this.label5.TabIndex = 10;
-      this.label5.Text = "Quantity:";
+      this.label5.Text = "Количество:";
       // 
       // label6
       // 
       this.label6.AutoSize = true;
       this.label6.Location = new System.Drawing.Point(6, 121);
       this.label6.Name = "label6";
-      this.label6.Size = new System.Drawing.Size(33, 13);
+      this.label6.Size = new System.Drawing.Size(36, 13);
       this.label6.TabIndex = 11;
-      this.label6.Text = "Date:";
+      this.label6.Text = "Дата:";
       // 
       // _date
       // 
@@ -183,7 +183,7 @@
       this.Controls.Add(this.label2);
       this.Name = "OrderInventoryForm";
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-      this.Text = "Order Inventory";
+      this.Text = "Предмет заказа";
       this.ResumeLayout(false);
       this.PerformLayout();
 

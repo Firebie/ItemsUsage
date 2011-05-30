@@ -66,7 +66,7 @@ namespace ItemsUsage.Forms
       {
         DialogResult dr =
           MessageBox.Show(
-            "Are you sure to delete the item?",
+            "Вы уверены что хотите удалить этот предмет?",
             "Warning",
             MessageBoxButtons.OKCancel,
             MessageBoxIcon.Question);

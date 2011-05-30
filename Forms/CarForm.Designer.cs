@@ -39,9 +39,9 @@
       this.label2.AutoSize = true;
       this.label2.Location = new System.Drawing.Point(16, 15);
       this.label2.Name = "label2";
-      this.label2.Size = new System.Drawing.Size(63, 13);
+      this.label2.Size = new System.Drawing.Size(60, 13);
       this.label2.TabIndex = 2;
-      this.label2.Text = "Description:";
+      this.label2.Text = "Название:";
       // 
       // _description
       // 
@@ -87,7 +87,7 @@
       this.Controls.Add(this.label2);
       this.Name = "CarForm";
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-      this.Text = "Car";
+      this.Text = "Машина";
       this.ResumeLayout(false);
       this.PerformLayout();
 

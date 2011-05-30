@@ -30,12 +30,6 @@
     {
       this.components = new System.ComponentModel.Container();
       this._gvItems = new System.Windows.Forms.DataGridView();
-      this.sequenceIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.itemInventoryDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.itemInventoryPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.itemInventoryQuantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.TotalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.objectBinder = new BLToolkit.ComponentModel.ObjectBinder(this.components);
       this._btnCancel = new System.Windows.Forms.Button();
       this._btnAdd = new System.Windows.Forms.Button();
@@ -51,6 +45,12 @@
       this._date = new System.Windows.Forms.DateTimePicker();
       this._btnPrint = new System.Windows.Forms.Button();
       this._btnDesign = new System.Windows.Forms.Button();
+      this.sequenceIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.itemInventoryDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.itemInventoryPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.itemInventoryQuantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.TotalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
       ((System.ComponentModel.ISupportInitialize)(this._gvItems)).BeginInit();
       this.SuspendLayout();
       // 
@@ -79,48 +79,6 @@
       this._gvItems.TabIndex = 0;
       this._gvItems.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this._gvItems_CellDoubleClick);
       // 
-      // sequenceIdDataGridViewTextBoxColumn
-      // 
-      this.sequenceIdDataGridViewTextBoxColumn.DataPropertyName = "SequenceId";
-      this.sequenceIdDataGridViewTextBoxColumn.HeaderText = "Sequence Id";
-      this.sequenceIdDataGridViewTextBoxColumn.Name = "sequenceIdDataGridViewTextBoxColumn";
-      this.sequenceIdDataGridViewTextBoxColumn.ReadOnly = true;
-      // 
-      // nameDataGridViewTextBoxColumn
-      // 
-      this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-      this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-      this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-      this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-      // 
-      // itemInventoryDateDataGridViewTextBoxColumn
-      // 
-      this.itemInventoryDateDataGridViewTextBoxColumn.DataPropertyName = "Date";
-      this.itemInventoryDateDataGridViewTextBoxColumn.HeaderText = "Date";
-      this.itemInventoryDateDataGridViewTextBoxColumn.Name = "itemInventoryDateDataGridViewTextBoxColumn";
-      this.itemInventoryDateDataGridViewTextBoxColumn.ReadOnly = true;
-      // 
-      // itemInventoryPriceDataGridViewTextBoxColumn
-      // 
-      this.itemInventoryPriceDataGridViewTextBoxColumn.DataPropertyName = "Price";
-      this.itemInventoryPriceDataGridViewTextBoxColumn.HeaderText = "Price";
-      this.itemInventoryPriceDataGridViewTextBoxColumn.Name = "itemInventoryPriceDataGridViewTextBoxColumn";
-      this.itemInventoryPriceDataGridViewTextBoxColumn.ReadOnly = true;
-      // 
-      // itemInventoryQuantityDataGridViewTextBoxColumn
-      // 
-      this.itemInventoryQuantityDataGridViewTextBoxColumn.DataPropertyName = "Quantity";
-      this.itemInventoryQuantityDataGridViewTextBoxColumn.HeaderText = "Quantity";
-      this.itemInventoryQuantityDataGridViewTextBoxColumn.Name = "itemInventoryQuantityDataGridViewTextBoxColumn";
-      this.itemInventoryQuantityDataGridViewTextBoxColumn.ReadOnly = true;
-      // 
-      // TotalPrice
-      // 
-      this.TotalPrice.DataPropertyName = "TotalPrice";
-      this.TotalPrice.HeaderText = "TotalPrice";
-      this.TotalPrice.Name = "TotalPrice";
-      this.TotalPrice.ReadOnly = true;
-      // 
       // objectBinder
       // 
       this.objectBinder.AllowEdit = false;
@@ -144,31 +102,31 @@
       this._btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
       this._btnAdd.Location = new System.Drawing.Point(13, 291);
       this._btnAdd.Name = "_btnAdd";
-      this._btnAdd.Size = new System.Drawing.Size(75, 23);
+      this._btnAdd.Size = new System.Drawing.Size(93, 23);
       this._btnAdd.TabIndex = 3;
-      this._btnAdd.Text = "Add";
+      this._btnAdd.Text = "Добавить";
       this._btnAdd.UseVisualStyleBackColor = true;
       this._btnAdd.Click += new System.EventHandler(this._btnAdd_Click);
       // 
       // _btnEdit
       // 
       this._btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-      this._btnEdit.Location = new System.Drawing.Point(94, 291);
+      this._btnEdit.Location = new System.Drawing.Point(112, 291);
       this._btnEdit.Name = "_btnEdit";
-      this._btnEdit.Size = new System.Drawing.Size(75, 23);
+      this._btnEdit.Size = new System.Drawing.Size(93, 23);
       this._btnEdit.TabIndex = 4;
-      this._btnEdit.Text = "Edit";
+      this._btnEdit.Text = "Редактировать";
       this._btnEdit.UseVisualStyleBackColor = true;
       this._btnEdit.Click += new System.EventHandler(this._btnEdit_Click);
       // 
       // _btnDelete
       // 
       this._btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-      this._btnDelete.Location = new System.Drawing.Point(175, 291);
+      this._btnDelete.Location = new System.Drawing.Point(211, 291);
       this._btnDelete.Name = "_btnDelete";
-      this._btnDelete.Size = new System.Drawing.Size(75, 23);
+      this._btnDelete.Size = new System.Drawing.Size(93, 23);
       this._btnDelete.TabIndex = 5;
-      this._btnDelete.Text = "Delete";
+      this._btnDelete.Text = "Удалить";
       this._btnDelete.UseVisualStyleBackColor = true;
       this._btnDelete.Click += new System.EventHandler(this._btnDelete_Click);
       // 
@@ -188,9 +146,9 @@
       this.label1.AutoSize = true;
       this.label1.Location = new System.Drawing.Point(13, 13);
       this.label1.Name = "label1";
-      this.label1.Size = new System.Drawing.Size(26, 13);
+      this.label1.Size = new System.Drawing.Size(51, 13);
       this.label1.TabIndex = 7;
-      this.label1.Text = "Car:";
+      this.label1.Text = "Машина:";
       // 
       // _selectCar
       // 
@@ -207,10 +165,10 @@
       // 
       this._car.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-      this._car.Location = new System.Drawing.Point(45, 10);
+      this._car.Location = new System.Drawing.Point(70, 10);
       this._car.Name = "_car";
       this._car.ReadOnly = true;
-      this._car.Size = new System.Drawing.Size(254, 20);
+      this._car.Size = new System.Drawing.Size(229, 20);
       this._car.TabIndex = 9;
       // 
       // _allTotal
@@ -230,7 +188,7 @@
       this.label2.Name = "label2";
       this.label2.Size = new System.Drawing.Size(44, 13);
       this.label2.TabIndex = 10;
-      this.label2.Text = "All total:";
+      this.label2.Text = "Сумма:";
       // 
       // label3
       // 
@@ -238,9 +196,9 @@
       this.label3.AutoSize = true;
       this.label3.Location = new System.Drawing.Point(334, 13);
       this.label3.Name = "label3";
-      this.label3.Size = new System.Drawing.Size(33, 13);
+      this.label3.Size = new System.Drawing.Size(36, 13);
       this.label3.TabIndex = 12;
-      this.label3.Text = "Date:";
+      this.label3.Text = "Дата:";
       // 
       // _date
       // 
@@ -254,24 +212,66 @@
       // _btnPrint
       // 
       this._btnPrint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-      this._btnPrint.Location = new System.Drawing.Point(373, 291);
+      this._btnPrint.Location = new System.Drawing.Point(405, 291);
       this._btnPrint.Name = "_btnPrint";
       this._btnPrint.Size = new System.Drawing.Size(75, 23);
       this._btnPrint.TabIndex = 14;
-      this._btnPrint.Text = "&Print";
+      this._btnPrint.Text = "Печать";
       this._btnPrint.UseVisualStyleBackColor = true;
       this._btnPrint.Click += new System.EventHandler(this._btnPrint_Click);
       // 
       // _btnDesign
       // 
       this._btnDesign.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-      this._btnDesign.Location = new System.Drawing.Point(292, 291);
+      this._btnDesign.Location = new System.Drawing.Point(324, 291);
       this._btnDesign.Name = "_btnDesign";
       this._btnDesign.Size = new System.Drawing.Size(75, 23);
       this._btnDesign.TabIndex = 15;
-      this._btnDesign.Text = "&Design";
+      this._btnDesign.Text = "Настройка";
       this._btnDesign.UseVisualStyleBackColor = true;
       this._btnDesign.Click += new System.EventHandler(this._btnDesign_Click);
+      // 
+      // sequenceIdDataGridViewTextBoxColumn
+      // 
+      this.sequenceIdDataGridViewTextBoxColumn.DataPropertyName = "SequenceId";
+      this.sequenceIdDataGridViewTextBoxColumn.HeaderText = "Номер";
+      this.sequenceIdDataGridViewTextBoxColumn.Name = "sequenceIdDataGridViewTextBoxColumn";
+      this.sequenceIdDataGridViewTextBoxColumn.ReadOnly = true;
+      // 
+      // nameDataGridViewTextBoxColumn
+      // 
+      this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+      this.nameDataGridViewTextBoxColumn.HeaderText = "Название";
+      this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+      this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+      // 
+      // itemInventoryDateDataGridViewTextBoxColumn
+      // 
+      this.itemInventoryDateDataGridViewTextBoxColumn.DataPropertyName = "Date";
+      this.itemInventoryDateDataGridViewTextBoxColumn.HeaderText = "Дата";
+      this.itemInventoryDateDataGridViewTextBoxColumn.Name = "itemInventoryDateDataGridViewTextBoxColumn";
+      this.itemInventoryDateDataGridViewTextBoxColumn.ReadOnly = true;
+      // 
+      // itemInventoryPriceDataGridViewTextBoxColumn
+      // 
+      this.itemInventoryPriceDataGridViewTextBoxColumn.DataPropertyName = "Price";
+      this.itemInventoryPriceDataGridViewTextBoxColumn.HeaderText = "Цена";
+      this.itemInventoryPriceDataGridViewTextBoxColumn.Name = "itemInventoryPriceDataGridViewTextBoxColumn";
+      this.itemInventoryPriceDataGridViewTextBoxColumn.ReadOnly = true;
+      // 
+      // itemInventoryQuantityDataGridViewTextBoxColumn
+      // 
+      this.itemInventoryQuantityDataGridViewTextBoxColumn.DataPropertyName = "Quantity";
+      this.itemInventoryQuantityDataGridViewTextBoxColumn.HeaderText = "Количество";
+      this.itemInventoryQuantityDataGridViewTextBoxColumn.Name = "itemInventoryQuantityDataGridViewTextBoxColumn";
+      this.itemInventoryQuantityDataGridViewTextBoxColumn.ReadOnly = true;
+      // 
+      // TotalPrice
+      // 
+      this.TotalPrice.DataPropertyName = "TotalPrice";
+      this.TotalPrice.HeaderText = "Сумма";
+      this.TotalPrice.Name = "TotalPrice";
+      this.TotalPrice.ReadOnly = true;
       // 
       // OrderForm
       // 
@@ -297,7 +297,7 @@
       this.Controls.Add(this._gvItems);
       this.Name = "OrderForm";
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-      this.Text = "Order inventories";
+      this.Text = "Заказ";
       ((System.ComponentModel.ISupportInitialize)(this._gvItems)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
@@ -313,12 +313,6 @@
     private System.Windows.Forms.Button _btnEdit;
     private System.Windows.Forms.Button _btnDelete;
     private System.Windows.Forms.Button _btnOk;
-    private System.Windows.Forms.DataGridViewTextBoxColumn sequenceIdDataGridViewTextBoxColumn;
-    private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-    private System.Windows.Forms.DataGridViewTextBoxColumn itemInventoryDateDataGridViewTextBoxColumn;
-    private System.Windows.Forms.DataGridViewTextBoxColumn itemInventoryPriceDataGridViewTextBoxColumn;
-    private System.Windows.Forms.DataGridViewTextBoxColumn itemInventoryQuantityDataGridViewTextBoxColumn;
-    private System.Windows.Forms.DataGridViewTextBoxColumn TotalPrice;
     private System.Windows.Forms.Label label1;
     private System.Windows.Forms.Button _selectCar;
     private System.Windows.Forms.TextBox _car;
@@ -328,5 +322,11 @@
     private System.Windows.Forms.DateTimePicker _date;
     private System.Windows.Forms.Button _btnPrint;
     private System.Windows.Forms.Button _btnDesign;
+    private System.Windows.Forms.DataGridViewTextBoxColumn sequenceIdDataGridViewTextBoxColumn;
+    private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+    private System.Windows.Forms.DataGridViewTextBoxColumn itemInventoryDateDataGridViewTextBoxColumn;
+    private System.Windows.Forms.DataGridViewTextBoxColumn itemInventoryPriceDataGridViewTextBoxColumn;
+    private System.Windows.Forms.DataGridViewTextBoxColumn itemInventoryQuantityDataGridViewTextBoxColumn;
+    private System.Windows.Forms.DataGridViewTextBoxColumn TotalPrice;
   }
 }

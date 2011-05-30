@@ -35,7 +35,7 @@ namespace ItemsUsage.Forms
       decimal price = 0;
       if (!decimal.TryParse(_price.Text, out price) || price < 0)
       {
-        MessageBox.Show("The price has an error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        MessageBox.Show("Ошибка в цене", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         return;
       }
 
