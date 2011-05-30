@@ -11,6 +11,8 @@ using BLToolkit.Data;
 using BLToolkit.EditableObjects;
 using BLToolkit.Reflection;
 
+using FastReport;
+
 using ItemsUsage.BusinessLogic;
 
 namespace ItemsUsage.Forms
@@ -193,7 +195,7 @@ namespace ItemsUsage.Forms
       }
     }
 
-    private void _btnOk_Click(object sender, EventArgs e)
+    bool Save()
     {
       _order.OrderDateTime = _date.Value.Date;
       try
@@ -232,10 +234,18 @@ namespace ItemsUsage.Forms
       {
         UseWaitCursor = false;
         MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        return false;
       }
-      
-      DialogResult = DialogResult.OK;
-      Close();
+      return true;
+    }
+
+    private void _btnOk_Click(object sender, EventArgs e)
+    {
+      if (Save())
+      {
+        DialogResult = DialogResult.OK;
+        Close();
+      }
     }
 
     void SetCar()
@@ -256,13 +266,35 @@ namespace ItemsUsage.Forms
       }
     }
 
-    void SetAllTotal()
+    decimal GetTotal()
     {
       decimal total = 0;
       foreach (GridItem item in objectBinder.List)
         total += item.TotalPrice;
 
-      _allTotal.Text = total.ToString();
+      return total;
+    }
+
+    void SetAllTotal()
+    {
+      _allTotal.Text = GetTotal().ToString();
+    }
+
+    private void _btnPrint_Click(object sender, EventArgs e)
+    {
+      if (Save())
+      {
+        using (Report report = new Report())
+        {
+          report.Load(@"C:\MyUsers\programs\manysrc\projects\ItemsUsage\Reports\Order.frx");
+          report.SetParameterValue("OrderDate", _order.OrderDateTime);
+          report.SetParameterValue("OrderCar", _order.CarId);
+          report.SetParameterValue("OrderPrice", GetTotal());
+          report.RegisterData(_gridItems, "data");
+          report.Design(true);
+          //report.Show();
+        }
+      }
     }
   }
 }
